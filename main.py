@@ -259,14 +259,14 @@ def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf
 
     loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 
-    metrics=['accuracy', 'sparse_categorical_crossentropy']
+    metrics=['accuracy']
 
     model.compile(optimizer=optimizer, loss=loss_object, metrics=metrics)
 
     model.fit(
         train_ds,
         validation_data=val_ds,
-        epochs=3
+        epochs=10
     )
 
     pass
