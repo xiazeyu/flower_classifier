@@ -161,3 +161,4 @@ cython_debug/
 
 .vs/
 mobilenetv2.h5
+logs/

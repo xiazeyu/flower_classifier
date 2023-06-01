@@ -2,16 +2,23 @@ from keras import Model
 from keras.applications import MobileNetV2
 from keras.layers import Dense
 from keras.models import load_model
+from keras.callbacks import EarlyStopping
 from pathlib import Path
 from PIL import Image
 from tensorflow import keras
 import tensorflow as tf
+import datetime
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Constants
 
 dataset_path = Path('./small_flower_dataset')
 pretrained_model_path = Path('mobilenetv2.h5')
-class_names: 'list[str]' = ['daisy', 'dandelion', 'roses', 'sunflowers', 'tulips']
+class_names: 'list[str]' = [
+    'daisy', 'dandelion', 'roses', 'sunflowers', 'tulips']
+log_dir = "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 
 # Utils
 
@@ -26,6 +33,12 @@ def get_dataset_length(dataset: tf.data.Dataset) -> int:
         int: The length of the dataset.
     """
     return tf.data.experimental.cardinality(dataset).numpy()
+
+def evaluate_model(model: Model, dataset: tf.data.Dataset):
+    pass
+
+def select_best_model( model: list[tuple[str, Model]] = None):
+    pass
 
 # Tasks
 
@@ -172,7 +185,7 @@ def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Mo
     return flower_model
 
 
-def task_4_prepare_dataset(train_ratio: float=0.7, val_ratio: float=0.1, test_ratio: float=0.2, seed: int=42, batch_size: int=32) -> 'tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]':
+def task_4_prepare_dataset(train_ratio: float = 0.7, val_ratio: float = 0.15, test_ratio: float = 0.15, seed: int = 42, batch_size: int = 32) -> 'tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]':
     """Prepare your training, validation and test sets for the non-accelerated version of transfer learning.
     The dataset has been resized to 224x224 pixels, normalized to [0,1], batched, and prefetched.
 
@@ -236,46 +249,96 @@ def task_4_prepare_dataset(train_ratio: float=0.7, val_ratio: float=0.1, test_ra
     return train_ds, val_ds, test_ds
 
 
-def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, learning_rate: float=0.01, momentum: float=0, nesterov: bool=False):
-    """_summary_
+def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, learning_rate: float = 0.01, momentum: float = 0, nesterov: bool = False, min_delta: float = 0.001, patience: int = 5, max_epoch: int = 1000) -> keras.callbacks.History:
+    """Compile and train your model with an SGD optimizer using the following parameters learning_rate=0.01, momentum=0.0, nesterov=False.
+    This is also a wrapper function for the model.fit() method.
 
     Args:
-        model (Model): _description_
-        train_ds (tf.data.Dataset): _description_
-        val_ds (tf.data.Dataset): _description_
-        learning_rate (float, optional): A Tensor, floating point value, or a schedule that is a tf.keras.optimizers.schedules.LearningRateSchedule, or a callable that takes no arguments and returns the actual value to use. The learning rate. Defaults to 0.01.
-        momentum (float, optional): loat hyperparameter >= 0 that accelerates gradient descent in the relevant direction and dampens oscillations. Defaults to 0, i.e., vanilla gradient descent.
-        nesterov (bool, optional): boolean. Whether to apply Nesterov momentum. Defaults to False.
-    """
-    
-    # Compile and train your model with an SGD optimizer using the following parameters learning_rate=0.01, momentum=0.0, nesterov=False.
-    print("*** Task 5 ***")
+        model (Model): Model to be trained.
+        train_ds (tf.data.Dataset): Dataset for training.
+        val_ds (tf.data.Dataset): Dataset for validation.
+        learning_rate (float, optional): The learning rate. Defaults to 0.01.
+        momentum (float, optional): Accelerates gradient descent in the relevant direction and dampens oscillations. Defaults to 0.
+        nesterov (bool, optional): Whether to apply Nesterov momentum. Defaults to False.
+        min_delta (float, optional): Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement. Defaults to 0.001.
+        patience (int, optional): Number of epochs with no improvement after which training will be stopped. Defaults to 5.
+        max_epoch (int, optional): Maximum number of epochs to train the model. Defaults to 1000.
 
+    Returns:
+        keras.callbacks.History: _description_
+    """
+
+    print("*** Task 5 ***")
+   
     optimizer = tf.keras.optimizers.experimental.SGD(
         learning_rate=learning_rate,
         momentum=momentum,
         nesterov=nesterov,
     )
 
-    loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+    loss_object = tf.keras.losses.SparseCategoricalCrossentropy()
 
-    metrics=['accuracy']
+    metrics = ['accuracy']
+
+    # applying early stopping to prevent overfitting
+    early_stopping = EarlyStopping(monitor='val_loss', min_delta=min_delta, patience=patience)
 
     model.compile(optimizer=optimizer, loss=loss_object, metrics=metrics)
 
-    model.fit(
+    return model.fit(
         train_ds,
         validation_data=val_ds,
-        epochs=10
+        epochs=max_epoch,
+        callbacks=[
+            early_stopping,
+            tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1),
+        ]
     )
 
-    pass
 
-
-def task_6_plot_metrics():
+def task_6_plot_metrics(histories: 'list[tuple[str, keras.callbacks.History]]', plt_name: str = None) -> None:
     # Plot the training and validation errors vs time as well as the training and validation accuracies.
     print("*** Task 6 ***")
 
+    fig, axs = plt.subplots(2, 2, figsize=(10, 5), layout='constrained') # type: tuple[plt.Figure, list[plt.Axes]]
+
+    ax: 'dict[str, plt.Axes]' = {
+        'training_loss': axs[0, 0],
+        'training_accuracy': axs[0, 1],
+        'validation_loss': axs[1, 0],
+        'validation_accuracy': axs[1, 1],
+    }
+
+    ax['training_loss'].set_title('Training Loss')
+    ax['training_accuracy'].set_title('Training Accuracy')
+    ax['validation_loss'].set_title('Validation Loss')
+    ax['validation_accuracy'].set_title('Validation Accuracy')
+
+    ax['training_loss'].set_ylabel('Loss')
+    ax['training_accuracy'].set_ylabel('Accuracy')
+    ax['validation_loss'].set_ylabel('Loss')
+    ax['validation_accuracy'].set_ylabel('Accuracy')
+    
+    for name, history in histories:
+        training_loss = history.history['loss']
+        training_accuracy = history.history['accuracy']
+        validation_loss = history.history['val_loss']
+        validation_accuracy = history.history['val_accuracy']
+        x = np.arange(1, len(training_loss)+1)
+        ax['training_loss'].plot(x, training_loss, label=name)
+        ax['training_accuracy'].plot(x, training_accuracy, label=name)
+        ax['validation_loss'].plot(x, validation_loss, label=name)
+        ax['validation_accuracy'].plot(x, validation_accuracy, label=name)
+
+    for i_ax in ax.values():
+        i_ax.set_xlabel('Epoch')
+        i_ax.grid(True)
+        i_ax.legend()
+
+    plt.tight_layout()
+    if plt_name:
+        plt.savefig(plt_name)
+    plt.show()
     pass
 
 
@@ -316,9 +379,9 @@ if __name__ == "__main__":
     task_2_download_pretrained_model()
     model = task_3_replace_last_layer()
     train_ds, val_ds, test_ds = task_4_prepare_dataset()
-    task_5_compile_and_train(model, train_ds, val_ds)
+    task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=5)
+    task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
     exit()
-    task_6_plot_metrics()
     task_7_expriment_with_different_hyperparameters()
     best_learning_rate = 0.01
     task_8_expriment_with_different_hyperparameters(best_learning_rate)
