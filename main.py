@@ -165,12 +165,12 @@ def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Mo
         print('%' * 50)
         model.summary()
         print('%' * 50)
-    flower_input: 'list' = model.input
-    flower_output = Dense(classes, activation='softmax')
-    flower_output = flower_output(model.layers[-2].output)
-    flower_model = Model(inputs=flower_input, outputs=flower_output)
-    for layer in flower_model.layers[:-1]:
-        layer.trainable = False
+    flower_input: 'list' = model.input # (None, 224, 224, 3)
+    flower_output = Dense(classes, activation='softmax') # (None, 5)
+    flower_output = flower_output(model.layers[-2].output) # (None, 1280) => (None, 5)
+    flower_model = Model(inputs=flower_input, outputs=flower_output) # (None, 224, 224, 3) => (None, 5)
+    flower_model.trainable = False
+    flower_model.layers[-1].trainable = True
     print('New model created.')
     if print_model:
         print('%' * 50)
@@ -399,13 +399,14 @@ def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset, v
 def task_9_generate_acceleated_datasets(classes: int = 5):
     # Prepare your training, validation and test sets. Those are based on {(F(x1).t1), (F(x2),t2),...,(F(xm),tm)},
     model: Model = load_model(pretrained_model_path)
-    flower_input: 'list' = model.input
-    flower_output = Dense(classes, activation='softmax')
-    flower_output = flower_output(model.layers[-2].output)
-    flower_model = Model(inputs=flower_input, outputs=flower_output)
-    for layer in flower_model.layers[:-1]:
-        layer.trainable = False
+    flower_input: 'list' = model.input # (None, 224, 224, 3)
+    flower_output: 'list' = model.layers[-2].output # (None, 1280)
+    flower_model_F = Model(inputs=flower_input, outputs=flower_output) # (None, 224, 224, 3) => (None, 1280)
+    flower_model_F.trainable = False
 
+    for idx, (image_batch, labels_batch) in enumerate(train_ds):
+        print(flower_model_F(image_batch)) # (32, 1280)
+        break
     pass
 
 
