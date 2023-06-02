@@ -288,7 +288,7 @@ def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf
         epochs=max_epoch,
         callbacks=[
             early_stopping,
-            tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1),
+            # tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1),
         ]
     )
 
