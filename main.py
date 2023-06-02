@@ -62,6 +62,10 @@ def env_check() -> None:
     And check if the GPU is available.
     """
 
+    tf_version = tf. __version__
+
+    print(f'Current tenforflow version is {tf_version}. Make sure it is 2.10.1')
+
     # Check if TensorFlow is built with CUDA support
     if tf.test.is_built_with_cuda():
         print("TensorFlow is built with CUDA support.")
@@ -169,7 +173,9 @@ def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Mo
     flower_output = Dense(classes, activation='softmax') # (None, 5)
     flower_output = flower_output(model.layers[-2].output) # (None, 1280) => (None, 5)
     flower_model = Model(inputs=flower_input, outputs=flower_output) # (None, 224, 224, 3) => (None, 5)
-    flower_model.trainable = False
+    # flower_model.trainable = False # Only works in tf==2.12.0
+    for layer in flower_model.layers[:-1]:
+        layer.trainable = False
     flower_model.layers[-1].trainable = True
     print('New model created.')
     if print_model:
