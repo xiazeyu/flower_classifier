@@ -247,7 +247,19 @@ def task_4_prepare_dataset(train_ratio: float = 0.7, val_ratio: float = 0.15, te
     return train_ds, val_ds, test_ds
 
 
-def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, learning_rate: float = 0.01, momentum: float = 0, nesterov: bool = False, min_delta: float = 0.001, patience: int = 5, max_epoch: int = 1000) -> 'tuple[Model, keras.callbacks.History]':
+def task_5_compile_and_train(model: Model,
+                             train_ds: tf.data.Dataset,
+                             val_ds: tf.data.Dataset,
+                             learning_rate: float = 0.01,
+                             momentum: float = 0,
+                             nesterov: bool = False,
+                             min_delta: float = 0.001,
+                             patience: int = 5,
+                             max_epoch: int = 1000,
+                             extra_log_path: str = None,
+                             early_stopping: bool = True,
+                             tensorboard: bool = True,
+                             ) -> 'tuple[Model, keras.callbacks.History]':
     """Compile and train your model with an SGD optimizer using the following parameters learning_rate=0.01, momentum=0.0, nesterov=False.
     This is also a wrapper function for the model.fit() method.
 
@@ -261,10 +273,17 @@ def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf
         min_delta (float, optional): Minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement. Defaults to 0.001.
         patience (int, optional): Number of epochs with no improvement after which training will be stopped. Defaults to 5.
         max_epoch (int, optional): Maximum number of epochs to train the model. Defaults to 1000.
+        extra_log_path (str, optional): Extra log path for TensorBoard. Defaults to None.
+        early_stopping (bool, optional): Whether to apply early stopping. Defaults to True.
+        tensorboard (bool, optional): Whether to use TensorBoard. Defaults to True.
 
     Returns:
         tuple[Model, keras.callbacks.History]: The trained model and the training history.
     """
+
+    train_conf=f'lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
+    if extra_log_path:
+        train_conf += f'_{extra_log_path}'
 
     optimizer = tf.keras.optimizers.experimental.SGD(
         learning_rate=learning_rate,
@@ -282,14 +301,21 @@ def task_5_compile_and_train(model: Model, train_ds: tf.data.Dataset, val_ds: tf
 
     model.compile(optimizer=optimizer, loss=loss_object, metrics=metrics)
 
+    callbacks = []
+
+    if early_stopping:
+        callbacks.append(EarlyStopping(
+        monitor='val_loss', min_delta=min_delta, patience=patience))
+
+    if tensorboard:
+        callbacks.append(tf.keras.callbacks.TensorBoard(
+            log_dir=log_dir + train_conf, histogram_freq=1))
+
     history = model.fit(
         train_ds,
         validation_data=val_ds,
         epochs=max_epoch,
-        callbacks=[
-            early_stopping,
-            # tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1),
-        ]
+        callbacks=callbacks
     )
 
     return model, history
