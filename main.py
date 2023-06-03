@@ -37,8 +37,14 @@ def get_dataset_length(dataset: tf.data.Dataset) -> int:
 
 
 def select_best_model(models: list[tuple[str, Model]] = None) -> str:
-    pass
-
+    lowest_val_loss = 0
+    #print(bbb.history.history['val_loss'][-1])
+    lowest_lenrning_rate = ""
+    for name, history in sorted(models):
+        validation_loss_end = history.history.history['val_loss'][-1]
+        if validation_loss_end > lowest_val_loss:
+            lowest_lenrning_rate = float(name)
+    return lowest_lenrning_rate
 
 def evaluate_model(model: Model, dataset: tf.data.Dataset):
     pass
@@ -323,32 +329,26 @@ def task_5_compile_and_train(model: Model,
 
 def task_6_plot_metrics(histories: 'list[tuple[str, keras.callbacks.History]]', plt_name: str = None) -> None:
     """Plot the training and validation errors vs time as well as the training and validation accuracies.
-
     Args:
         histories (list[tuple[str, keras.callbacks.History]]): A list of tuples of the form (name, history).
         plt_name (str, optional): The name of the plot file. Defaults to None.
     """
-
     # type: tuple[plt.Figure, list[plt.Axes]]
     fig, axs = plt.subplots(2, 2, figsize=(15, 10), layout='constrained')
-
     ax: 'dict[str, plt.Axes]' = {
         'training_loss': axs[0, 0],
         'training_accuracy': axs[0, 1],
         'validation_loss': axs[1, 0],
         'validation_accuracy': axs[1, 1],
     }
-
     ax['training_loss'].set_title('Training Loss')
     ax['training_accuracy'].set_title('Training Accuracy')
     ax['validation_loss'].set_title('Validation Loss')
     ax['validation_accuracy'].set_title('Validation Accuracy')
-
     ax['training_loss'].set_ylabel('Loss')
     ax['training_accuracy'].set_ylabel('Accuracy')
     ax['validation_loss'].set_ylabel('Loss')
     ax['validation_accuracy'].set_ylabel('Accuracy')
-
     for name, history in sorted(histories):
         training_loss = history.history['loss']
         training_accuracy = history.history['accuracy']
@@ -359,12 +359,10 @@ def task_6_plot_metrics(histories: 'list[tuple[str, keras.callbacks.History]]', 
         ax['training_accuracy'].plot(x, training_accuracy, label=name)
         ax['validation_loss'].plot(x, validation_loss, label=name)
         ax['validation_accuracy'].plot(x, validation_accuracy, label=name)
-
     for i_ax in ax.values():
         i_ax.set_xlabel('Epoch')
         i_ax.grid(True)
         i_ax.legend()
-
     plt.tight_layout()
     if plt_name:
         plt.savefig(plt_name)
@@ -408,8 +406,9 @@ def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset, va
     return models, histories
 
 
-def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, momentums: 'list[float]' = [0.1, 0.3, 0.5, 0.7, 0.9], learning_rate: float = 0.01, max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
-    """With the best learning rate that you found in the previous task, add a non zero momentum to the training with the SGD optimizer (consider 3 values for the momentum). Report how your results change.
+def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, momentums: 'list[float]' = [0.1,  0.5, 0.9], learning_rate: float = 0.01, max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
+    """
+    With the best learning rate that you found in the previous task, add a non zero momentum to the training with the SGD optimizer (consider 3 values for the momentum). Report how your results change.
 
     """
 
@@ -452,8 +451,6 @@ if __name__ == "__main__":
     pass
 
     MAX_EPOCH = 1000
-
-    print(my_team())
     # autopep8: off
     print("*** Environment Check ***"); env_check()
     print("*** Task 1 ***"); task_1_dataset_sanity_check()
@@ -463,10 +460,11 @@ if __name__ == "__main__":
     print("*** Task 5 ***"); _, task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=MAX_EPOCH)
     print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
     print("*** Task 7 ***"); task_7_models, _ = task_7_expriment_with_different_learning_rates(task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, max_epoch=MAX_EPOCH)
+    task_7_models.append(('0.01',model))
+    best_learning_rate = select_best_model(task_7_models)
+    momentums = [0.1,  0.5, 0.9]
+    print("*** Task 8 ***"); task_8_expriment_with_different_hyperparameters( train_ds, val_ds,momentums,(float(best_learning_rate)))
     exit()
-    select_best_model(task_7_models)
-    best_learning_rate = 0.01
-    print("*** Task 8 ***"); task_8_expriment_with_different_hyperparameters(best_learning_rate)
     print("*** Task 9 ***"); task_9_generate_acceleated_datasets()
     print("*** Task 10 ***"); task_10_train_on_accelerated_datasets()
     # autopep8: on
