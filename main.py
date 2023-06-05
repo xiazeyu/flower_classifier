@@ -8,7 +8,6 @@ from PIL import Image
 from tensorflow import keras
 import tensorflow as tf
 import datetime
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -36,18 +35,50 @@ def get_dataset_length(dataset: tf.data.Dataset) -> int:
     return tf.data.experimental.cardinality(dataset).numpy()
 
 
-def select_best_model(models: list[tuple[str, Model]] = None) -> str:
-    lowest_val_loss = 0
-    #print(bbb.history.history['val_loss'][-1])
-    lowest_lenrning_rate = ""
-    for name, history in sorted(models):
-        validation_loss_end = history.history.history['val_loss'][-1]
-        if validation_loss_end > lowest_val_loss:
-            lowest_lenrning_rate = float(name)
-    return lowest_lenrning_rate
+def select_best_model(models: 'list[tuple[str, Model]]', dataset: tf.data.Dataset, metric: str = 'acc') -> 'tuple[str, Model]':
+    """Select the best model from a list of models.
 
-def evaluate_model(model: Model, dataset: tf.data.Dataset):
-    pass
+    Args:
+        models (list[tuple[str, Model]]): Models to select from.
+        dataset (tf.data.Dataset): Dataset to evaluate the models on.
+        metric (str, optional): Metric to use for selection. Defaults to 'acc'.
+
+    Returns:
+        tuple[str, Model]: The best model.
+    """
+
+    assert metric in ['acc', 'loss']
+
+    loss_values = []
+    acc_values = []
+
+    for name, model in models:
+        loss_value, metrics_value = evaluate_model(model, dataset)
+        loss_values.append(loss_value)
+        acc_values.append(metrics_value)
+
+    matrix = np.array([loss_values, acc_values])
+
+    if metric == 'acc':
+        best_model_index = np.argmax(matrix[1])
+    else:
+        best_model_index = np.argmin(matrix[0])
+
+    return models[best_model_index]
+
+
+def evaluate_model(model: Model, dataset: tf.data.Dataset) -> 'tuple[float, float]':
+    """Returns the loss value & metrics values for the model in test mode.
+
+    Args:
+        model (Model): Model to evaluate.
+        dataset (tf.data.Dataset): Dataset to evaluate the model on.
+
+    Returns:
+        tuple[float, float]: Loss value & metrics values for the model in test mode.
+    """
+
+    return model.evaluate(dataset)
 
 # Tasks
 
@@ -70,7 +101,8 @@ def env_check() -> None:
 
     tf_version = tf. __version__
 
-    print(f'Current tenforflow version is {tf_version}. Make sure it is 2.10.1')
+    print(
+        f'Current tenforflow version is {tf_version}. Make sure it is 2.10.1')
 
     # Check if TensorFlow is built with CUDA support
     if tf.test.is_built_with_cuda():
@@ -175,10 +207,12 @@ def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Mo
         print('%' * 50)
         model.summary()
         print('%' * 50)
-    flower_input: 'list' = model.input # (None, 224, 224, 3)
-    flower_output = Dense(classes, activation='softmax') # (None, 5)
-    flower_output = flower_output(model.layers[-2].output) # (None, 1280) => (None, 5)
-    flower_model = Model(inputs=flower_input, outputs=flower_output) # (None, 224, 224, 3) => (None, 5)
+    flower_input: 'list' = model.input  # (None, 224, 224, 3)
+    flower_output = Dense(classes, activation='softmax')  # (None, 5)
+    # (None, 1280) => (None, 5)
+    flower_output = flower_output(model.layers[-2].output)
+    # (None, 224, 224, 3) => (None, 5)
+    flower_model = Model(inputs=flower_input, outputs=flower_output)
     # flower_model.trainable = False # Only works in tf==2.12.0
     for layer in flower_model.layers[:-1]:
         layer.trainable = False
@@ -192,7 +226,11 @@ def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Mo
     return flower_model
 
 
-def task_4_prepare_dataset(train_ratio: float = 0.7, val_ratio: float = 0.15, test_ratio: float = 0.15, seed: int = 42, batch_size: int = 32) -> 'tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]':
+def task_4_prepare_dataset(train_ratio: float = 0.7,
+                           val_ratio: float = 0.15,
+                           test_ratio: float = 0.15,
+                           seed: int = 42,
+                           batch_size: int = 32) -> 'tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]':
     """Prepare your training, validation and test sets for the non-accelerated version of transfer learning.
     The dataset has been resized to 224x224 pixels, normalized to [0,1], batched, and prefetched.
 
@@ -287,7 +325,7 @@ def task_5_compile_and_train(model: Model,
         tuple[Model, keras.callbacks.History]: The trained model and the training history.
     """
 
-    train_conf=f'lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
+    train_conf = f'lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
     if extra_log_path:
         train_conf += f'_{extra_log_path}'
 
@@ -311,7 +349,7 @@ def task_5_compile_and_train(model: Model,
 
     if early_stopping:
         callbacks.append(EarlyStopping(
-        monitor='val_loss', min_delta=min_delta, patience=patience))
+            monitor='val_loss', min_delta=min_delta, patience=patience))
 
     if tensorboard:
         callbacks.append(tf.keras.callbacks.TensorBoard(
@@ -371,7 +409,12 @@ def task_6_plot_metrics(histories: 'list[tuple[str, keras.callbacks.History]]', 
     pass
 
 
-def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, learning_rates: 'list[float]' = [0.1, 0.001], task_5_history: keras.callbacks.History = None, max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
+def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset,
+                                                   val_ds: tf.data.Dataset,
+                                                   learning_rates: 'list[float]' = [
+                                                       0.1, 0.001],
+                                                   task_5_history: keras.callbacks.History = None,
+                                                   max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
     """Experiment with 3 different orders of magnitude for the learning rate. Plot the results, draw conclusions.
 
     Args:
@@ -406,7 +449,12 @@ def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset, va
     return models, histories
 
 
-def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, momentums: 'list[float]' = [0.1,  0.5, 0.9], learning_rate: float = 0.01, max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
+def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset,
+                                                    val_ds: tf.data.Dataset,
+                                                    momentums: 'list[float]' = [
+                                                        0.1, 0.5, 0.9],
+                                                    learning_rate: float = 0.01,
+                                                    max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
     """
     With the best learning rate that you found in the previous task, add a non zero momentum to the training with the SGD optimizer (consider 3 values for the momentum). Report how your results change.
 
@@ -430,13 +478,14 @@ def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset, v
 def task_9_generate_acceleated_datasets(classes: int = 5):
     # Prepare your training, validation and test sets. Those are based on {(F(x1).t1), (F(x2),t2),...,(F(xm),tm)},
     model: Model = load_model(pretrained_model_path)
-    flower_input: 'list' = model.input # (None, 224, 224, 3)
-    flower_output: 'list' = model.layers[-2].output # (None, 1280)
-    flower_model_F = Model(inputs=flower_input, outputs=flower_output) # (None, 224, 224, 3) => (None, 1280)
+    flower_input: 'list' = model.input  # (None, 224, 224, 3)
+    flower_output: 'list' = model.layers[-2].output  # (None, 1280)
+    # (None, 224, 224, 3) => (None, 1280)
+    flower_model_F = Model(inputs=flower_input, outputs=flower_output)
     flower_model_F.trainable = False
 
     for idx, (image_batch, labels_batch) in enumerate(train_ds):
-        print(flower_model_F(image_batch)) # (32, 1280)
+        print(flower_model_F(image_batch))  # (32, 1280)
         break
     pass
 
@@ -450,20 +499,17 @@ def task_10_train_on_accelerated_datasets():
 if __name__ == "__main__":
     pass
 
-    MAX_EPOCH = 1000
+    MAX_EPOCH = 3
     # autopep8: off
     print("*** Environment Check ***"); env_check()
     print("*** Task 1 ***"); task_1_dataset_sanity_check()
     print("*** Task 2 ***"); task_2_download_pretrained_model()
     print("*** Task 3 ***"); model = task_3_replace_last_layer()
     print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
-    print("*** Task 5 ***"); _, task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=MAX_EPOCH)
+    print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=MAX_EPOCH)
     print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
-    print("*** Task 7 ***"); task_7_models, _ = task_7_expriment_with_different_learning_rates(task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, max_epoch=MAX_EPOCH)
-    task_7_models.append(('0.01',model))
-    best_learning_rate = select_best_model(task_7_models)
-    momentums = [0.1,  0.5, 0.9]
-    print("*** Task 8 ***"); task_8_expriment_with_different_hyperparameters( train_ds, val_ds,momentums,(float(best_learning_rate)))
+    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, max_epoch=MAX_EPOCH)
+    print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(task_7_models, test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_hyperparameters(train_ds, val_ds, learning_rate=float(best_model_str_task_7), max_epoch=MAX_EPOCH)
     exit()
     print("*** Task 9 ***"); task_9_generate_acceleated_datasets()
     print("*** Task 10 ***"); task_10_train_on_accelerated_datasets()
