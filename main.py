@@ -606,10 +606,13 @@ if __name__ == "__main__":
     pass
 
     train_configuration = {
-        'max_epoch': 10,
-        'tensorboard': False,
-        'seed': 42,
+        'max_epoch': 1000,
+        'min_delta': 0.001,
+        'patience': 5,
+        'tensorboard': True,
         'model_checkpoint': True,
+        'early_stopping': True,
+        'seed': 42,
     }
 
     # Put this to True to use accelerated model for all tasks
