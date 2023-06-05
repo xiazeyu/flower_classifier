@@ -302,7 +302,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
                              extra_log_path: str = None,
                              early_stopping: bool = True,
                              tensorboard: bool = True,
-                             model_checkpoint: bool = True,
+                             save_model: bool = True,
                              seed: int = 42,
                              ) -> 'tuple[tf.keras.Model, tf.keras.callbacks.History]':
     """Compile and train your model with an SGD optimizer using the following parameters learning_rate=0.01, momentum=0.0, nesterov=False.
@@ -321,7 +321,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
         extra_log_path (str, optional): Extra log path for TensorBoard. Defaults to None.
         early_stopping (bool, optional): Whether to apply early stopping. Defaults to True.
         tensorboard (bool, optional): Whether to use TensorBoard. Defaults to True.
-        model_checkpoint (bool, optional): Whether to use ModelCheckpoint. Defaults to True.
+        save_model (bool, optional): Whether to use ModelCheckpoint. Defaults to True.
         seed (int, optional): Seed for random number generator. Defaults to 42.
 
     Returns:
@@ -351,10 +351,6 @@ def task_5_compile_and_train(model: tf.keras.Model,
 
     metrics = ['accuracy']
 
-    # applying early stopping to prevent overfitting
-    early_stopping = tf.keras.callbacks.EarlyStopping(
-        monitor='val_loss', min_delta=min_delta, patience=patience)
-
     model.compile(optimizer=optimizer, loss=loss_object, metrics=metrics)
 
     callbacks = []
@@ -367,16 +363,15 @@ def task_5_compile_and_train(model: tf.keras.Model,
         callbacks.append(tf.keras.callbacks.TensorBoard(
             log_dir=log_dir + train_conf, histogram_freq=1))
     
-    if model_checkpoint:
-        callbacks.append(tf.keras.callbacks.ModelCheckpoint(
-            monitor='val_loss', filepath=log_dir + train_conf + '/weights.hdf5', verbose=1))
-
     history = model.fit(
         train_ds,
         validation_data=val_ds,
         epochs=max_epoch,
         callbacks=callbacks
     )
+
+    if save_model:
+        model.save(log_dir + train_conf + '/weights.h5')
 
     return model, history
 
@@ -606,12 +601,12 @@ if __name__ == "__main__":
     pass
 
     train_configuration = {
-        'max_epoch': 1000,
+        'max_epoch': 300,
         'min_delta': 0.001,
         'patience': 5,
-        'tensorboard': True,
-        'model_checkpoint': True,
-        'early_stopping': True,
+        'tensorboard': False,
+        'save_model': True,
+        'early_stopping': False,
         'seed': 42,
     }
 
