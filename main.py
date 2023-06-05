@@ -243,6 +243,7 @@ def task_4_prepare_dataset(train_ratio: float = 0.7,
 
     Returns:
         tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]: train, val, test datasets.
+        Each dataset has the shape of (X, y)=((batch_size, 224, 224, 3), (batch_size))
     """
 
     assert train_ratio + val_ratio + test_ratio == 1
@@ -278,9 +279,10 @@ def task_4_prepare_dataset(train_ratio: float = 0.7,
 
     # batch the datasets
     # enable prefetching to improve performance
-    train_ds = train_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
-    val_ds = val_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
-    test_ds = test_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
+    if batch_size is not None:
+        train_ds = train_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
+        val_ds = val_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
+        test_ds = test_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
 
     # check if the dataset is loaded correctly
     if False:
@@ -448,16 +450,23 @@ def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset,
 
     return models, histories
 
-
 def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset,
                                                     val_ds: tf.data.Dataset,
                                                     momentums: 'list[float]' = [
                                                         0.1, 0.5, 0.9],
                                                     learning_rate: float = 0.01,
                                                     max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
-    """
-    With the best learning rate that you found in the previous task, add a non zero momentum to the training with the SGD optimizer (consider 3 values for the momentum). Report how your results change.
+    """Experiment with 3 different values for the momentum. Plot the results, draw conclusions.
 
+    Args:
+        train_ds (tf.data.Dataset): The training dataset.
+        val_ds (tf.data.Dataset): The validation dataset.
+        momentums (list[float], optional): A list of momentums to experiment with. Defaults to [0.1, 0.5, 0.9].
+        learning_rate (float, optional): The learning rate to use for training. Defaults to 0.01.
+        max_epoch (int, optional): Maximum number of epochs to train the model. Defaults to 1000.
+
+    Returns:
+        tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]: A tuple of (models, histories).
     """
 
     histories: 'list[tuple[str, keras.callbacks.History]]' = []
@@ -475,20 +484,65 @@ def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset,
     return models, histories
 
 
-def task_9_generate_acceleated_datasets(classes: int = 5):
-    # Prepare your training, validation and test sets. Those are based on {(F(x1).t1), (F(x2),t2),...,(F(xm),tm)},
+def generate_model_tensor_from_img_dataset(dataset: tf.data.Dataset) -> 'tf.data.Dataset':
+    """Generate a dataset of tensors from a dataset of images, using all but last layers of MobileNet v2.
+
+    Args:
+        dataset (tf.data.Dataset): The dataset of images.
+
+    Returns:
+        tf.data.Dataset: The dataset of tensors. Each has the shape (X, y)=((None, 1280), (None)).
+    """
+
     model: Model = load_model(pretrained_model_path)
-    flower_input: 'list' = model.input  # (None, 224, 224, 3)
-    flower_output: 'list' = model.layers[-2].output  # (None, 1280)
-    # (None, 224, 224, 3) => (None, 1280)
+    flower_input: 'list' = model.input  # (batch_size, 224, 224, 3)
+    flower_output: 'list' = model.layers[-2].output  # (batch_size, 1280)
     flower_model_F = Model(inputs=flower_input, outputs=flower_output)
     flower_model_F.trainable = False
+    # shape=(batch_size, 224, 224, 3) => (batch_size, 1280)
 
-    for idx, (image_batch, labels_batch) in enumerate(train_ds):
-        print(flower_model_F(image_batch))  # (32, 1280)
-        break
-    pass
+    Xs = []
+    ys = []
+    
+    for idx, (X, y) in enumerate(dataset):
+        Xs.append(flower_model_F(X)) # shape=(batch_size, 1280)
+        ys.append(y)
+        print(f'Preprocessing Batch {idx+1}/{len(dataset)}.')
+        
+    Xs = tf.concat(Xs, axis=0) # shape=(dataset_length, 1280)
+    ys = tf.concat(ys, axis=0) # shape=(dataset_length)
+    
+    # shape: (X, y)=((None, 1280), (None))
+    return tf.data.Dataset.from_tensor_slices((Xs, ys))
 
+def task_9_generate_acceleated_datasets(batch_size: int = 32, **extra_args) -> 'tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]':
+    """Prepare datasets based on the MobileNet v2 model with the last layer removed.
+
+    Args:
+        batch_size (int, optional): The batch size to use for the datasets. Defaults to 32.
+
+    Returns:
+        tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]: A tuple of (train_ds, val_ds, test_ds).
+        Each dataset has the shape (X, y)=((batch_size, 1280), (batch_size)).
+    """
+
+    img_train_ds, img_val_ds, img_test_ds = task_4_prepare_dataset(batch_size=batch_size, **extra_args)
+    
+    train_ds = generate_model_tensor_from_img_dataset(img_train_ds)
+    val_ds = generate_model_tensor_from_img_dataset(img_val_ds)
+    test_ds = generate_model_tensor_from_img_dataset(img_test_ds)
+    
+    AUTOTUNE = tf.data.AUTOTUNE
+
+    # batch the datasets
+    # enable prefetching to improve performance
+    if batch_size is not None:
+        train_ds = train_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
+        val_ds = val_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
+        test_ds = test_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
+
+    return train_ds, val_ds, test_ds
+    
 
 def task_10_train_on_accelerated_datasets():
     # Perform Task 8 on the new dataset created in Task 9.
@@ -501,17 +555,16 @@ if __name__ == "__main__":
 
     MAX_EPOCH = 3
     # autopep8: off
-    print("*** Environment Check ***"); env_check()
-    print("*** Task 1 ***"); task_1_dataset_sanity_check()
-    print("*** Task 2 ***"); task_2_download_pretrained_model()
-    print("*** Task 3 ***"); model = task_3_replace_last_layer()
-    print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
-    print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=MAX_EPOCH)
-    print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
-    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, max_epoch=MAX_EPOCH)
-    print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(task_7_models, test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_hyperparameters(train_ds, val_ds, learning_rate=float(best_model_str_task_7), max_epoch=MAX_EPOCH)
-    exit()
-    print("*** Task 9 ***"); task_9_generate_acceleated_datasets()
+    # print("*** Environment Check ***"); env_check()
+    # print("*** Task 1 ***"); task_1_dataset_sanity_check()
+    # print("*** Task 2 ***"); task_2_download_pretrained_model()
+    # print("*** Task 3 ***"); model = task_3_replace_last_layer()
+    # print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
+    # print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=MAX_EPOCH)
+    # print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
+    # print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, max_epoch=MAX_EPOCH)
+    # print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(task_7_models, test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_hyperparameters(train_ds, val_ds, learning_rate=float(best_model_str_task_7), max_epoch=MAX_EPOCH)
+    print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
     print("*** Task 10 ***"); task_10_train_on_accelerated_datasets()
     # autopep8: on
 
