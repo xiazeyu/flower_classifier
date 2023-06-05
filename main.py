@@ -1,15 +1,9 @@
-from keras import Model
-from keras.applications import MobileNetV2
-from keras.layers import Dense
-from keras.models import load_model
-from keras.callbacks import EarlyStopping
 from pathlib import Path
 from PIL import Image
-from tensorflow import keras
-import tensorflow as tf
 import datetime
 import matplotlib.pyplot as plt
 import numpy as np
+import tensorflow as tf
 
 # Constants
 
@@ -35,7 +29,7 @@ def get_dataset_length(dataset: tf.data.Dataset) -> int:
     return tf.data.experimental.cardinality(dataset).numpy()
 
 
-def select_best_model(models: 'list[tuple[str, Model]]', dataset: tf.data.Dataset, metric: str = 'acc') -> 'tuple[str, Model]':
+def select_best_model(models: 'list[tuple[str, tf.keras.Model]]', dataset: tf.data.Dataset, metric: str = 'acc') -> 'tuple[str, tf.keras.Model]':
     """Select the best model from a list of models.
 
     Args:
@@ -67,7 +61,7 @@ def select_best_model(models: 'list[tuple[str, Model]]', dataset: tf.data.Datase
     return models[best_model_index]
 
 
-def evaluate_model(model: Model, dataset: tf.data.Dataset) -> 'tuple[float, float]':
+def evaluate_model(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[float, float]':
     """Returns the loss value & metrics values for the model in test mode.
 
     Args:
@@ -102,7 +96,7 @@ def env_check() -> None:
     tf_version = tf. __version__
 
     print(
-        f'Current tenforflow version is {tf_version}. Make sure it is 2.10.1')
+        f'Current tenforflow version is {tf_version}. Make sure it is >= 2.10.1')
 
     # Check if TensorFlow is built with CUDA support
     if tf.test.is_built_with_cuda():
@@ -182,13 +176,14 @@ def task_2_download_pretrained_model() -> None:
         print('Pretrained model already exists.')
         return
     # Using the tf.keras.applications module download a pretrained MobileNetV2 network
-    model: Model = MobileNetV2(weights='imagenet')
+    model: tf.keras.Model = tf.keras.applications.MobileNetV2(
+        weights='imagenet')
     model.save(pretrained_model_path)
     assert pretrained_model_path.exists()
     print('Pretrained model downloaded.')
 
 
-def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Model:
+def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> tf.keras.Model:
     """Replace the last layer of the downloaded neural network with a Dense layer of the
     appropriate shape for the 5 classes of the small flower dataset
     {(x1,t1), (x2,t2),..., (xm,tm)}.
@@ -201,18 +196,19 @@ def task_3_replace_last_layer(classes: int = 5, print_model: bool = False) -> Mo
         Model: The new model.
     """
 
-    model: Model = load_model(pretrained_model_path)
+    model: tf.keras.Model = tf.keras.models.load_model(pretrained_model_path)
     print('Pretrained model loaded.')
     if print_model:
         print('%' * 50)
         model.summary()
         print('%' * 50)
     flower_input: 'list' = model.input  # (None, 224, 224, 3)
-    flower_output = Dense(classes, activation='softmax')  # (None, 5)
+    flower_output = tf.keras.layers.Dense(
+        classes, activation='softmax')  # (None, 5)
     # (None, 1280) => (None, 5)
     flower_output = flower_output(model.layers[-2].output)
     # (None, 224, 224, 3) => (None, 5)
-    flower_model = Model(inputs=flower_input, outputs=flower_output)
+    flower_model = tf.keras.Model(inputs=flower_input, outputs=flower_output)
     # flower_model.trainable = False # Only works in tf==2.12.0
     for layer in flower_model.layers[:-1]:
         layer.trainable = False
@@ -248,7 +244,7 @@ def task_4_prepare_dataset(train_ratio: float = 0.7,
 
     assert train_ratio + val_ratio + test_ratio == 1
 
-    ds: tf.data.Dataset = keras.utils.image_dataset_from_directory(
+    ds: tf.data.Dataset = tf.keras.utils.image_dataset_from_directory(
         dataset_path,
         batch_size=None,
         image_size=(224, 224),
@@ -293,7 +289,7 @@ def task_4_prepare_dataset(train_ratio: float = 0.7,
     return train_ds, val_ds, test_ds
 
 
-def task_5_compile_and_train(model: Model,
+def task_5_compile_and_train(model: tf.keras.Model,
                              train_ds: tf.data.Dataset,
                              val_ds: tf.data.Dataset,
                              learning_rate: float = 0.01,
@@ -305,7 +301,8 @@ def task_5_compile_and_train(model: Model,
                              extra_log_path: str = None,
                              early_stopping: bool = True,
                              tensorboard: bool = True,
-                             ) -> 'tuple[Model, keras.callbacks.History]':
+                             seed: int = 42,
+                             ) -> 'tuple[tf.keras.Model, tf.keras.callbacks.History]':
     """Compile and train your model with an SGD optimizer using the following parameters learning_rate=0.01, momentum=0.0, nesterov=False.
     This is also a wrapper function for the model.fit() method.
 
@@ -322,10 +319,13 @@ def task_5_compile_and_train(model: Model,
         extra_log_path (str, optional): Extra log path for TensorBoard. Defaults to None.
         early_stopping (bool, optional): Whether to apply early stopping. Defaults to True.
         tensorboard (bool, optional): Whether to use TensorBoard. Defaults to True.
+        seed (int, optional): Seed for random number generator. Defaults to 42.
 
     Returns:
-        tuple[Model, keras.callbacks.History]: The trained model and the training history.
+        tuple[Model, tf.keras.callbacks.History]: The trained model and the training history.
     """
+
+    tf.random.set_seed(seed)
 
     train_conf = f'lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
     if extra_log_path:
@@ -342,7 +342,7 @@ def task_5_compile_and_train(model: Model,
     metrics = ['accuracy']
 
     # applying early stopping to prevent overfitting
-    early_stopping = EarlyStopping(
+    early_stopping = tf.keras.callbacks.EarlyStopping(
         monitor='val_loss', min_delta=min_delta, patience=patience)
 
     model.compile(optimizer=optimizer, loss=loss_object, metrics=metrics)
@@ -350,7 +350,7 @@ def task_5_compile_and_train(model: Model,
     callbacks = []
 
     if early_stopping:
-        callbacks.append(EarlyStopping(
+        callbacks.append(tf.keras.callbacks.EarlyStopping(
             monitor='val_loss', min_delta=min_delta, patience=patience))
 
     if tensorboard:
@@ -367,10 +367,10 @@ def task_5_compile_and_train(model: Model,
     return model, history
 
 
-def task_6_plot_metrics(histories: 'list[tuple[str, keras.callbacks.History]]', plt_name: str = None) -> None:
+def task_6_plot_metrics(histories: 'list[tuple[str, tf.keras.callbacks.History]]', plt_name: str = None) -> None:
     """Plot the training and validation errors vs time as well as the training and validation accuracies.
     Args:
-        histories (list[tuple[str, keras.callbacks.History]]): A list of tuples of the form (name, history).
+        histories (list[tuple[str, tf.keras.callbacks.History]]): A list of tuples of the form (name, history).
         plt_name (str, optional): The name of the plot file. Defaults to None.
     """
     # type: tuple[plt.Figure, list[plt.Axes]]
@@ -411,28 +411,29 @@ def task_6_plot_metrics(histories: 'list[tuple[str, keras.callbacks.History]]', 
     pass
 
 
-def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset,
+def task_7_expriment_with_different_learning_rates(model: tf.keras.Model,
+                                                   train_ds: tf.data.Dataset,
                                                    val_ds: tf.data.Dataset,
                                                    learning_rates: 'list[float]' = [
                                                        0.1, 0.001],
-                                                   task_5_history: keras.callbacks.History = None,
-                                                   max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
+                                                   task_5_history: tf.keras.callbacks.History = None,
+                                                   **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
     """Experiment with 3 different orders of magnitude for the learning rate. Plot the results, draw conclusions.
 
     Args:
+        model (tf.keras.Model): The model to train.
         train_ds (tf.data.Dataset): The training dataset.
         val_ds (tf.data.Dataset): The validation dataset.
         learning_rates (list[float], optional): A list of learning rates to experiment with. Defaults to [0.1, 0.001].
-        task_5_history (keras.callbacks.History, optional): The history of the model trained with learning rate 0.01. Defaults to None.
-        max_epoch (int, optional): Maximum number of epochs to train the model. Defaults to 1000.
+        task_5_history (tf.keras.callbacks.History, optional): The history of the model trained with learning rate 0.01. Defaults to None.
 
     Returns:
-        tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]: A tuple of (models, histories).
+        tuple[list[tuple[str, Model]], list[tuple[str, tf.keras.callbacks.History]]]: A tuple of (models, histories).
         models is a list of tuples of the form (name, model). histories is a list of tuples of the form (name, history).
     """
 
-    histories: 'list[tuple[str, keras.callbacks.History]]' = []
-    models: 'list[tuple[str, keras.callbacks.History]]' = []
+    histories: 'list[tuple[str, tf.keras.callbacks.History]]' = []
+    models: 'list[tuple[str, tf.keras.callbacks.History]]' = []
 
     if task_5_history:
         histories.append(('0.01', task_5_history))
@@ -440,44 +441,42 @@ def task_7_expriment_with_different_learning_rates(train_ds: tf.data.Dataset,
         learning_rates.append(0.01)
 
     for learning_rate in learning_rates:
-        model = task_3_replace_last_layer()
-        model, history = task_5_compile_and_train(
-            model, train_ds, val_ds, learning_rate=learning_rate, max_epoch=max_epoch)
+        trained_model, history = task_5_compile_and_train(
+            model, train_ds, val_ds, learning_rate=learning_rate, **extra_args)
         histories.append((str(learning_rate), history))
-        models.append((str(learning_rate), model))
+        models.append((str(learning_rate), trained_model))
 
     task_6_plot_metrics(histories, 'Task 7')
 
     return models, histories
 
-def task_8_expriment_with_different_hyperparameters(train_ds: tf.data.Dataset,
+
+def task_8_expriment_with_different_momentums(model: tf.keras.Model,
+                                                    train_ds: tf.data.Dataset,
                                                     val_ds: tf.data.Dataset,
                                                     momentums: 'list[float]' = [
                                                         0.1, 0.5, 0.9],
-                                                    learning_rate: float = 0.01,
-                                                    max_epoch: int = 1000) -> 'tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]':
+                                                    **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
     """Experiment with 3 different values for the momentum. Plot the results, draw conclusions.
 
     Args:
+        model (tf.keras.Model): The model to train.
         train_ds (tf.data.Dataset): The training dataset.
         val_ds (tf.data.Dataset): The validation dataset.
         momentums (list[float], optional): A list of momentums to experiment with. Defaults to [0.1, 0.5, 0.9].
-        learning_rate (float, optional): The learning rate to use for training. Defaults to 0.01.
-        max_epoch (int, optional): Maximum number of epochs to train the model. Defaults to 1000.
-
+        
     Returns:
-        tuple[list[tuple[str, Model]], list[tuple[str, keras.callbacks.History]]]: A tuple of (models, histories).
+        tuple[list[tuple[str, Model]], list[tuple[str, tf.keras.callbacks.History]]]: A tuple of (models, histories).
     """
 
-    histories: 'list[tuple[str, keras.callbacks.History]]' = []
-    models: 'list[tuple[str, keras.callbacks.History]]' = []
+    histories: 'list[tuple[str, tf.keras.callbacks.History]]' = []
+    models: 'list[tuple[str, tf.keras.callbacks.History]]' = []
 
     for momentum in momentums:
-        model = task_3_replace_last_layer()
-        model, history = task_5_compile_and_train(
-            model, train_ds, val_ds, learning_rate=learning_rate, momentum=momentum, max_epoch=max_epoch)
-        histories.append((str(momentum), history))
-        models.append((str(momentum), model))
+        trained_model, new_history = task_5_compile_and_train(
+            model, train_ds, val_ds, momentum=momentum, **extra_args)
+        histories.append((str(momentum), new_history))
+        models.append((str(momentum), trained_model))
 
     task_6_plot_metrics(histories, 'Task 8')
 
@@ -494,26 +493,27 @@ def generate_model_tensor_from_img_dataset(dataset: tf.data.Dataset) -> 'tf.data
         tf.data.Dataset: The dataset of tensors. Each has the shape (X, y)=((None, 1280), (None)).
     """
 
-    model: Model = load_model(pretrained_model_path)
+    model: tf.keras.Model = tf.keras.models.load_model(pretrained_model_path)
     flower_input: 'list' = model.input  # (batch_size, 224, 224, 3)
     flower_output: 'list' = model.layers[-2].output  # (batch_size, 1280)
-    flower_model_F = Model(inputs=flower_input, outputs=flower_output)
+    flower_model_F = tf.keras.Model(inputs=flower_input, outputs=flower_output)
     flower_model_F.trainable = False
     # shape=(batch_size, 224, 224, 3) => (batch_size, 1280)
 
     Xs = []
     ys = []
-    
+
     for idx, (X, y) in enumerate(dataset):
-        Xs.append(flower_model_F(X)) # shape=(batch_size, 1280)
+        Xs.append(flower_model_F(X))  # shape=(batch_size, 1280)
         ys.append(y)
         print(f'Preprocessing Batch {idx+1}/{len(dataset)}.')
-        
-    Xs = tf.concat(Xs, axis=0) # shape=(dataset_length, 1280)
-    ys = tf.concat(ys, axis=0) # shape=(dataset_length)
-    
+
+    Xs = tf.concat(Xs, axis=0)  # shape=(dataset_length, 1280)
+    ys = tf.concat(ys, axis=0)  # shape=(dataset_length)
+
     # shape: (X, y)=((None, 1280), (None))
     return tf.data.Dataset.from_tensor_slices((Xs, ys))
+
 
 def task_9_generate_acceleated_datasets(batch_size: int = 32, **extra_args) -> 'tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]':
     """Prepare datasets based on the MobileNet v2 model with the last layer removed.
@@ -526,12 +526,13 @@ def task_9_generate_acceleated_datasets(batch_size: int = 32, **extra_args) -> '
         Each dataset has the shape (X, y)=((batch_size, 1280), (batch_size)).
     """
 
-    img_train_ds, img_val_ds, img_test_ds = task_4_prepare_dataset(batch_size=batch_size, **extra_args)
-    
+    img_train_ds, img_val_ds, img_test_ds = task_4_prepare_dataset(
+        batch_size=batch_size, **extra_args)
+
     train_ds = generate_model_tensor_from_img_dataset(img_train_ds)
     val_ds = generate_model_tensor_from_img_dataset(img_val_ds)
     test_ds = generate_model_tensor_from_img_dataset(img_test_ds)
-    
+
     AUTOTUNE = tf.data.AUTOTUNE
 
     # batch the datasets
@@ -542,34 +543,75 @@ def task_9_generate_acceleated_datasets(batch_size: int = 32, **extra_args) -> '
         test_ds = test_ds.batch(batch_size).prefetch(buffer_size=AUTOTUNE)
 
     return train_ds, val_ds, test_ds
-    
 
-def task_10_train_on_accelerated_datasets():
-    # Perform Task 8 on the new dataset created in Task 9.
+def generate_accelerated_model(classes: int = 5, print_model: bool = False) -> 'tf.keras.Model':
+    """Generate a model based on the MobileNet v2 model with the last layer removed.
 
-    pass
+    Args:
+        classes (int, optional): The number of classes in the dataset. Defaults to 5.
+        print_model (bool, optional): Whether to print the model summary. Defaults to False.
 
+    Returns:
+        tf.keras.Model: The model.
+    """
+
+    flower_model = tf.keras.Sequential([
+        tf.keras.layers.Dense(classes, activation='softmax'),
+    ])
+
+    flower_model.build(input_shape=(None, 1280))
+
+    if print_model:
+        print('%' * 50)
+        flower_model.summary(show_trainable=True)
+        print('%' * 50)
+
+    print('New model created.')
+
+    return flower_model
+
+def task_10_train_on_accelerated_datasets(classes: int = 5, **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
+    """Train a model on the accelerated datasets.
+
+    Args:
+        classes (int, optional): The number of classes in the dataset. Defaults to 5.
+
+    Returns:
+        tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]: A tuple of (models, histories).
+    """
+
+    model = generate_accelerated_model(classes=classes)
+
+    models, histories = task_8_expriment_with_different_momentums(
+        model, **extra_args
+    )
+
+    return models, histories
 
 if __name__ == "__main__":
     pass
 
-    MAX_EPOCH = 3
-    # autopep8: off
-    # print("*** Environment Check ***"); env_check()
-    # print("*** Task 1 ***"); task_1_dataset_sanity_check()
-    # print("*** Task 2 ***"); task_2_download_pretrained_model()
-    # print("*** Task 3 ***"); model = task_3_replace_last_layer()
-    # print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
-    # print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model, train_ds, val_ds, max_epoch=MAX_EPOCH)
-    # print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
-    # print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, max_epoch=MAX_EPOCH)
-    # print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(task_7_models, test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_hyperparameters(train_ds, val_ds, learning_rate=float(best_model_str_task_7), max_epoch=MAX_EPOCH)
-    print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
-    print("*** Task 10 ***"); task_10_train_on_accelerated_datasets()
-    # autopep8: on
+    train_configuration = {
+        'max_epoch': 10,
+        'tensorboard': False,
+        'seed': 42,
+    }
 
-# TODOs:
-# Header comments
-# Each function parameter documented including type and shape of parameters
-# return values clearly documented
-# max_epoch=MAX_EPOCH => /
+    # Put this to True to use accelerated model for all tasks
+    accelerated = False
+
+    # autopep8: off
+    print("*** Environment Check ***"); env_check()
+    print("*** Task 1 ***"); task_1_dataset_sanity_check()
+    print("*** Task 2 ***"); task_2_download_pretrained_model()
+    print("*** Task 3 ***"); model = task_3_replace_last_layer()
+    if accelerated: print("Accelerate Experiments"); model = generate_accelerated_model()
+    print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
+    if accelerated: print("Accelerate Experiments"); train_ds, val_ds, test_ds = task_9_generate_acceleated_datasets()
+    print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model=model, train_ds=train_ds, val_ds=val_ds, **train_configuration)
+    print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
+    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(model=model, task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, **train_configuration)
+    print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(models=task_7_models, dataset=test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_momentums(model=model, train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
+    print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
+    print("*** Task 10 ***"); task_10_models, task_10_histories = task_10_train_on_accelerated_datasets(train_ds=accelerated_train_ds, val_ds=accelerated_val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
+    # autopep8: on
