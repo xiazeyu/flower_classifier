@@ -301,6 +301,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
                              max_epoch: int = 1000,
                              extra_log_path: str = None,
                              early_stopping: bool = True,
+                             checkpoint_best: bool = True,
                              tensorboard: bool = True,
                              save_model: bool = True,
                              seed: int = 42,
@@ -320,8 +321,9 @@ def task_5_compile_and_train(model: tf.keras.Model,
         max_epoch (int, optional): Maximum number of epochs to train the model. Defaults to 1000.
         extra_log_path (str, optional): Extra log path for TensorBoard. Defaults to None.
         early_stopping (bool, optional): Whether to apply early stopping. Defaults to True.
+        checkpoint_best (bool, optional): Whether to use ModelCheckpoint. Defaults to True.
         tensorboard (bool, optional): Whether to use TensorBoard. Defaults to True.
-        save_model (bool, optional): Whether to use ModelCheckpoint. Defaults to True.
+        save_model (bool, optional): Whether to save model at end of training. Defaults to True.
         seed (int, optional): Seed for random number generator. Defaults to 42.
 
     Returns:
@@ -363,6 +365,10 @@ def task_5_compile_and_train(model: tf.keras.Model,
         callbacks.append(tf.keras.callbacks.TensorBoard(
             log_dir=log_dir + train_conf, histogram_freq=1))
     
+    if checkpoint_best:
+        callbacks.append(tf.keras.callbacks.ModelCheckpoint(
+            filepath=log_dir + train_conf + '/best.h5', monitor='val_loss', save_best_only=True))
+
     history = model.fit(
         train_ds,
         validation_data=val_ds,
@@ -607,6 +613,7 @@ if __name__ == "__main__":
         'tensorboard': False,
         'save_model': True,
         'early_stopping': False,
+        'checkpoint_best': True,
         'seed': 42,
     }
 
