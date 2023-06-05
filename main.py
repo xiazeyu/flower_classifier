@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Callable
 from PIL import Image
 import datetime
 import matplotlib.pyplot as plt
@@ -337,6 +338,8 @@ def task_5_compile_and_train(model: tf.keras.Model,
     train_conf = f'{model_type}_lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
     if extra_log_path:
         train_conf += f'_{extra_log_path}'
+    
+    print(f'Training with {train_conf}...')
 
     optimizer = tf.keras.optimizers.experimental.SGD(
         learning_rate=learning_rate,
@@ -422,7 +425,7 @@ def task_6_plot_metrics(histories: 'list[tuple[str, tf.keras.callbacks.History]]
     pass
 
 
-def task_7_expriment_with_different_learning_rates(model: tf.keras.Model,
+def task_7_expriment_with_different_learning_rates(model_gen_function: 'Callable[[], tf.keras.Model]',
                                                    train_ds: tf.data.Dataset,
                                                    val_ds: tf.data.Dataset,
                                                    learning_rates: 'list[float]' = [
@@ -432,7 +435,7 @@ def task_7_expriment_with_different_learning_rates(model: tf.keras.Model,
     """Experiment with 3 different orders of magnitude for the learning rate. Plot the results, draw conclusions.
 
     Args:
-        model (tf.keras.Model): The model to train.
+        model_gen_function (Callable[[], tf.keras.Model]): A function that returns a model.
         train_ds (tf.data.Dataset): The training dataset.
         val_ds (tf.data.Dataset): The validation dataset.
         learning_rates (list[float], optional): A list of learning rates to experiment with. Defaults to [0.1, 0.001].
@@ -452,6 +455,7 @@ def task_7_expriment_with_different_learning_rates(model: tf.keras.Model,
         learning_rates.append(0.01)
 
     for learning_rate in learning_rates:
+        model = model_gen_function()
         trained_model, history = task_5_compile_and_train(
             model, train_ds, val_ds, learning_rate=learning_rate, **extra_args)
         histories.append((str(learning_rate), history))
@@ -462,16 +466,16 @@ def task_7_expriment_with_different_learning_rates(model: tf.keras.Model,
     return models, histories
 
 
-def task_8_expriment_with_different_momentums(model: tf.keras.Model,
-                                                    train_ds: tf.data.Dataset,
-                                                    val_ds: tf.data.Dataset,
-                                                    momentums: 'list[float]' = [
-                                                        0.1, 0.5, 0.9],
-                                                    **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
+def task_8_expriment_with_different_momentums(model_gen_function: 'Callable[[], tf.keras.Model]',
+                                              train_ds: tf.data.Dataset,
+                                              val_ds: tf.data.Dataset,
+                                              momentums: 'list[float]' = [
+                                                  0.1, 0.5, 0.9],
+                                               **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
     """Experiment with 3 different values for the momentum. Plot the results, draw conclusions.
 
     Args:
-        model (tf.keras.Model): The model to train.
+        model_gen_function (Callable[[], tf.keras.Model]): A function that returns a model.
         train_ds (tf.data.Dataset): The training dataset.
         val_ds (tf.data.Dataset): The validation dataset.
         momentums (list[float], optional): A list of momentums to experiment with. Defaults to [0.1, 0.5, 0.9].
@@ -484,6 +488,7 @@ def task_8_expriment_with_different_momentums(model: tf.keras.Model,
     models: 'list[tuple[str, tf.keras.callbacks.History]]' = []
 
     for momentum in momentums:
+        model = model_gen_function()
         trained_model, new_history = task_5_compile_and_train(
             model, train_ds, val_ds, momentum=momentum, **extra_args)
         histories.append((str(momentum), new_history))
@@ -591,10 +596,8 @@ def task_10_train_on_accelerated_datasets(classes: int = 5, **extra_args) -> 'tu
         tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]: A tuple of (models, histories).
     """
 
-    model = generate_accelerated_model(classes=classes)
-
     models, histories = task_8_expriment_with_different_momentums(
-        model, **extra_args
+        generate_accelerated_model, **extra_args
     )
 
     return models, histories
@@ -616,14 +619,14 @@ if __name__ == "__main__":
     print("*** Environment Check ***"); env_check()
     print("*** Task 1 ***"); task_1_dataset_sanity_check()
     print("*** Task 2 ***"); task_2_download_pretrained_model()
-    print("*** Task 3 ***"); model = task_3_replace_last_layer()
-    if accelerated: print("Accelerate Experiments"); model = generate_accelerated_model()
+    print("*** Task 3 ***"); model_gen_function = task_3_replace_last_layer
+    if accelerated: print("Accelerate Experiments"); model_gen_function = generate_accelerated_model
     print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
     if accelerated: print("Accelerate Experiments"); train_ds, val_ds, test_ds = task_9_generate_acceleated_datasets()
-    print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model=model, train_ds=train_ds, val_ds=val_ds, **train_configuration)
+    print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model=model_gen_function(), train_ds=train_ds, val_ds=val_ds, **train_configuration)
     print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
-    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(model=model, task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, **train_configuration)
-    print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(models=task_7_models, dataset=test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_momentums(model=model, train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
+    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(model_gen_function=model_gen_function, task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, **train_configuration)
+    print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(models=task_7_models, dataset=test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_momentums(model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
     print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
     print("*** Task 10 ***"); task_10_models, task_10_histories = task_10_train_on_accelerated_datasets(train_ds=accelerated_train_ds, val_ds=accelerated_val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
     # autopep8: on
