@@ -75,6 +75,36 @@ def evaluate_model(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[fl
 
     return model.evaluate(dataset)
 
+def predict(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[np.ndarray, np.ndarray]':
+    """Predict the model on a dataset.
+
+    Args:
+        model (Model): Model to predict.
+        dataset (tf.data.Dataset): Dataset to predict the model on.
+
+    Returns:
+        tuple[np.ndarray, np.ndarray]: Prediction & ground truth.
+    """
+
+    prob_prediction = model.predict(dataset) # shape=(dataset_length, 5)
+    
+    prediction = np.argmax(prob_prediction, axis=1) # shape=(dataset_length)
+
+    Xs = []
+    ys = []
+
+    for idx, (X, y) in enumerate(dataset):
+        nx = X.numpy()
+        ny = y.numpy()
+        Xs.append(nx)
+        ys.append(ny)
+        print(f'Preprocessing Batch {idx+1}/{len(dataset)}.')
+
+    Xs = np.concatenate(Xs)
+    ground_truth = np.concatenate(ys)
+    
+    return (prediction, ground_truth, Xs)
+
 # Tasks
 
 
@@ -635,3 +665,7 @@ if __name__ == "__main__":
     print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
     print("*** Task 10 ***"); task_10_models, task_10_histories = task_10_train_on_accelerated_datasets(train_ds=accelerated_train_ds, val_ds=accelerated_val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
     # autopep8: on
+
+# TODO
+# analysis
+# confusion matrix
