@@ -325,7 +325,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
         tuple[Model, tf.keras.callbacks.History]: The trained model and the training history.
     """
 
-    tf.random.set_seed(seed)
+    tf.keras.utils.set_random_seed(seed)
 
     train_conf = f'lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
     if extra_log_path:
