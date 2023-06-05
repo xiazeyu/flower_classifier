@@ -301,6 +301,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
                              extra_log_path: str = None,
                              early_stopping: bool = True,
                              tensorboard: bool = True,
+                             model_checkpoint: bool = True,
                              seed: int = 42,
                              ) -> 'tuple[tf.keras.Model, tf.keras.callbacks.History]':
     """Compile and train your model with an SGD optimizer using the following parameters learning_rate=0.01, momentum=0.0, nesterov=False.
@@ -319,6 +320,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
         extra_log_path (str, optional): Extra log path for TensorBoard. Defaults to None.
         early_stopping (bool, optional): Whether to apply early stopping. Defaults to True.
         tensorboard (bool, optional): Whether to use TensorBoard. Defaults to True.
+        model_checkpoint (bool, optional): Whether to use ModelCheckpoint. Defaults to True.
         seed (int, optional): Seed for random number generator. Defaults to 42.
 
     Returns:
@@ -327,7 +329,12 @@ def task_5_compile_and_train(model: tf.keras.Model,
 
     tf.keras.utils.set_random_seed(seed)
 
-    train_conf = f'lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
+    model_type = 'normal'
+
+    if len(model.layers) == 1:
+        model_type = 'accelerated'
+
+    train_conf = f'{model_type}_lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
     if extra_log_path:
         train_conf += f'_{extra_log_path}'
 
@@ -356,6 +363,10 @@ def task_5_compile_and_train(model: tf.keras.Model,
     if tensorboard:
         callbacks.append(tf.keras.callbacks.TensorBoard(
             log_dir=log_dir + train_conf, histogram_freq=1))
+    
+    if model_checkpoint:
+        callbacks.append(tf.keras.callbacks.ModelCheckpoint(
+            monitor='val_loss', filepath=log_dir + train_conf + '/weights.hdf5', verbose=1))
 
     history = model.fit(
         train_ds,
@@ -595,6 +606,7 @@ if __name__ == "__main__":
         'max_epoch': 10,
         'tensorboard': False,
         'seed': 42,
+        'model_checkpoint': True,
     }
 
     # Put this to True to use accelerated model for all tasks
