@@ -397,7 +397,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
     
     if checkpoint_best:
         callbacks.append(tf.keras.callbacks.ModelCheckpoint(
-            filepath=log_dir + train_conf + '/best.h5', monitor='val_loss', save_best_only=True))
+            filepath=log_dir + train_conf + '/best.h5', monitor='val_loss', save_best_only=True, verbose=1))
 
     history = model.fit(
         train_ds,
@@ -637,12 +637,12 @@ if __name__ == "__main__":
     pass
 
     train_configuration = {
-        'max_epoch': 300,
+        'max_epoch': 500,
         'min_delta': 0.001,
         'patience': 5,
         'tensorboard': False,
         'save_model': True,
-        'early_stopping': False,
+        'early_stopping': True,
         'checkpoint_best': True,
         'seed': 42,
     }
