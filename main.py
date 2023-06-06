@@ -648,7 +648,7 @@ if __name__ == "__main__":
     }
 
     # Put this to True to use accelerated model for all tasks
-    accelerated = False
+    accelerated = True
 
     # autopep8: off
     print("*** Environment Check ***"); env_check()
@@ -658,10 +658,41 @@ if __name__ == "__main__":
     if accelerated: print("Accelerate Experiments"); model_gen_function = generate_accelerated_model
     print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
     if accelerated: print("Accelerate Experiments"); train_ds, val_ds, test_ds = task_9_generate_acceleated_datasets()
+    train_configuration = {
+        'max_epoch': 500,
+        'min_delta': 0.001,
+        'patience': 5,
+        'tensorboard': False,
+        'save_model': True,
+        'early_stopping': True,
+        'checkpoint_best': True,
+        'seed': 42,
+    }
     print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model=model_gen_function(), train_ds=train_ds, val_ds=val_ds, **train_configuration)
     print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
-    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(model_gen_function=model_gen_function, task_5_history=task_5_history, train_ds=train_ds, val_ds=val_ds, **train_configuration)
-    print("*** Task 8 ***"); task_7_models.append(('0.01', task_5_model)); best_model_str_task_7, best_model_task_7 = select_best_model(models=task_7_models, dataset=test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_momentums(model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
+    train_configuration = {
+        'max_epoch': 500,
+        'min_delta': 0.001,
+        'patience': 5,
+        'tensorboard': False,
+        'save_model': True,
+        'early_stopping': False,
+        'checkpoint_best': True,
+        'seed': 42,
+    }
+    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds,  **train_configuration)
+    train_configuration = {
+        'max_epoch': 150,
+        'min_delta': 0.001,
+        'patience': 5,
+        'tensorboard': False,
+        'save_model': True,
+        'early_stopping': False,
+        'checkpoint_best': True,
+        'seed': 42,
+    }
+    
+    print("*** Task 8 ***"); best_model_str_task_7, best_model_task_7 = select_best_model(models=task_7_models, dataset=test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_momentums(model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7),  **train_configuration)
     print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
     print("*** Task 10 ***"); task_10_models, task_10_histories = task_10_train_on_accelerated_datasets(train_ds=accelerated_train_ds, val_ds=accelerated_val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
     # autopep8: on
