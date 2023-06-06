@@ -1,0 +1,1820 @@
+*** Task 8 ***
+WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+Pretrained model loaded.
+New model created.
+Training with normal_lr0.01_momentum0.1_nesterov=False...
+Epoch 1/150
+21/22 [===========================>..] - ETA: 0s - loss: 1.3010 - accuracy: 0.4821
+Epoch 1: val_loss improved from inf to 0.83373, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 4s 77ms/step - loss: 1.2917 - accuracy: 0.4871 - val_loss: 0.8337 - val_accuracy: 0.7467
+Epoch 2/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.7942 - accuracy: 0.7247
+Epoch 2: val_loss improved from 0.83373 to 0.62328, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.7944 - accuracy: 0.7243 - val_loss: 0.6233 - val_accuracy: 0.7933
+Epoch 3/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.6249 - accuracy: 0.8036
+Epoch 3: val_loss improved from 0.62328 to 0.52355, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.6263 - accuracy: 0.8014 - val_loss: 0.5235 - val_accuracy: 0.8400
+Epoch 4/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.5310 - accuracy: 0.8348
+Epoch 4: val_loss improved from 0.52355 to 0.46202, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.5324 - accuracy: 0.8329 - val_loss: 0.4620 - val_accuracy: 0.8800
+Epoch 5/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.4680 - accuracy: 0.8601
+Epoch 5: val_loss improved from 0.46202 to 0.41858, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.4692 - accuracy: 0.8600 - val_loss: 0.4186 - val_accuracy: 0.8867
+Epoch 6/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.4214 - accuracy: 0.8810
+Epoch 6: val_loss improved from 0.41858 to 0.38532, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.4224 - accuracy: 0.8800 - val_loss: 0.3853 - val_accuracy: 0.9067
+Epoch 7/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3847 - accuracy: 0.8943
+Epoch 7: val_loss improved from 0.38532 to 0.35852, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.3856 - accuracy: 0.8957 - val_loss: 0.3585 - val_accuracy: 0.9200
+Epoch 8/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3547 - accuracy: 0.9048
+Epoch 8: val_loss improved from 0.35852 to 0.33615, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.3554 - accuracy: 0.9057 - val_loss: 0.3361 - val_accuracy: 0.9200
+Epoch 9/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3295 - accuracy: 0.9137
+Epoch 9: val_loss improved from 0.33615 to 0.31702, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.3301 - accuracy: 0.9157 - val_loss: 0.3170 - val_accuracy: 0.9267
+Epoch 10/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3079 - accuracy: 0.9196
+Epoch 10: val_loss improved from 0.31702 to 0.30032, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.3084 - accuracy: 0.9214 - val_loss: 0.3003 - val_accuracy: 0.9333
+Epoch 11/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2890 - accuracy: 0.9301
+Epoch 11: val_loss improved from 0.30032 to 0.28560, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2895 - accuracy: 0.9314 - val_loss: 0.2856 - val_accuracy: 0.9400
+Epoch 12/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2724 - accuracy: 0.9360
+Epoch 12: val_loss improved from 0.28560 to 0.27244, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2728 - accuracy: 0.9371 - val_loss: 0.2724 - val_accuracy: 0.9400
+Epoch 13/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2576 - accuracy: 0.9375
+Epoch 13: val_loss improved from 0.27244 to 0.26058, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2580 - accuracy: 0.9386 - val_loss: 0.2606 - val_accuracy: 0.9400
+Epoch 14/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2444 - accuracy: 0.9464
+Epoch 14: val_loss improved from 0.26058 to 0.24980, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2447 - accuracy: 0.9471 - val_loss: 0.2498 - val_accuracy: 0.9400
+Epoch 15/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2324 - accuracy: 0.9509
+Epoch 15: val_loss improved from 0.24980 to 0.23995, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.2327 - accuracy: 0.9514 - val_loss: 0.2400 - val_accuracy: 0.9400
+Epoch 16/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2215 - accuracy: 0.9539
+Epoch 16: val_loss improved from 0.23995 to 0.23091, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2218 - accuracy: 0.9543 - val_loss: 0.2309 - val_accuracy: 0.9400
+Epoch 17/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2116 - accuracy: 0.9613
+Epoch 17: val_loss improved from 0.23091 to 0.22258, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2119 - accuracy: 0.9614 - val_loss: 0.2226 - val_accuracy: 0.9467
+Epoch 18/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2025 - accuracy: 0.9673
+Epoch 18: val_loss improved from 0.22258 to 0.21486, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2028 - accuracy: 0.9671 - val_loss: 0.2149 - val_accuracy: 0.9467
+Epoch 19/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1941 - accuracy: 0.9688
+Epoch 19: val_loss improved from 0.21486 to 0.20767, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1944 - accuracy: 0.9686 - val_loss: 0.2077 - val_accuracy: 0.9467
+Epoch 20/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1864 - accuracy: 0.9717
+Epoch 20: val_loss improved from 0.20767 to 0.20097, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1866 - accuracy: 0.9714 - val_loss: 0.2010 - val_accuracy: 0.9467
+Epoch 21/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1792 - accuracy: 0.9732
+Epoch 21: val_loss improved from 0.20097 to 0.19472, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1794 - accuracy: 0.9729 - val_loss: 0.1947 - val_accuracy: 0.9467
+Epoch 22/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1726 - accuracy: 0.9762
+Epoch 22: val_loss improved from 0.19472 to 0.18887, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1728 - accuracy: 0.9757 - val_loss: 0.1889 - val_accuracy: 0.9467
+Epoch 23/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1664 - accuracy: 0.9807
+Epoch 23: val_loss improved from 0.18887 to 0.18338, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1666 - accuracy: 0.9800 - val_loss: 0.1834 - val_accuracy: 0.9467
+Epoch 24/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1606 - accuracy: 0.9807
+Epoch 24: val_loss improved from 0.18338 to 0.17822, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1608 - accuracy: 0.9800 - val_loss: 0.1782 - val_accuracy: 0.9467
+Epoch 25/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1551 - accuracy: 0.9807
+Epoch 25: val_loss improved from 0.17822 to 0.17333, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1553 - accuracy: 0.9800 - val_loss: 0.1733 - val_accuracy: 0.9533
+Epoch 26/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1501 - accuracy: 0.9807
+Epoch 26: val_loss improved from 0.17333 to 0.16875, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1502 - accuracy: 0.9800 - val_loss: 0.1688 - val_accuracy: 0.9600
+Epoch 27/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1453 - accuracy: 0.9836
+Epoch 27: val_loss improved from 0.16875 to 0.16442, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1454 - accuracy: 0.9843 - val_loss: 0.1644 - val_accuracy: 0.9667
+Epoch 28/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1408 - accuracy: 0.9896
+Epoch 28: val_loss improved from 0.16442 to 0.16032, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1409 - accuracy: 0.9900 - val_loss: 0.1603 - val_accuracy: 0.9800
+Epoch 29/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1365 - accuracy: 0.9896
+Epoch 29: val_loss improved from 0.16032 to 0.15644, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1367 - accuracy: 0.9900 - val_loss: 0.1564 - val_accuracy: 0.9800
+Epoch 30/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1325 - accuracy: 0.9911
+Epoch 30: val_loss improved from 0.15644 to 0.15275, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.1327 - accuracy: 0.9914 - val_loss: 0.1528 - val_accuracy: 0.9800
+Epoch 31/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1287 - accuracy: 0.9940
+Epoch 31: val_loss improved from 0.15275 to 0.14927, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1289 - accuracy: 0.9943 - val_loss: 0.1493 - val_accuracy: 0.9800
+Epoch 32/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1251 - accuracy: 0.9940
+Epoch 32: val_loss improved from 0.14927 to 0.14594, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.1253 - accuracy: 0.9943 - val_loss: 0.1459 - val_accuracy: 0.9800
+Epoch 33/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1217 - accuracy: 0.9940
+Epoch 33: val_loss improved from 0.14594 to 0.14279, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1219 - accuracy: 0.9943 - val_loss: 0.1428 - val_accuracy: 0.9800
+Epoch 34/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1185 - accuracy: 0.9940
+Epoch 34: val_loss improved from 0.14279 to 0.13979, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1187 - accuracy: 0.9943 - val_loss: 0.1398 - val_accuracy: 0.9800
+Epoch 35/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1154 - accuracy: 0.9955
+Epoch 35: val_loss improved from 0.13979 to 0.13692, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1156 - accuracy: 0.9957 - val_loss: 0.1369 - val_accuracy: 0.9800
+Epoch 36/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1125 - accuracy: 0.9955
+Epoch 36: val_loss improved from 0.13692 to 0.13420, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1126 - accuracy: 0.9957 - val_loss: 0.1342 - val_accuracy: 0.9800
+Epoch 37/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1097 - accuracy: 0.9955
+Epoch 37: val_loss improved from 0.13420 to 0.13159, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1099 - accuracy: 0.9957 - val_loss: 0.1316 - val_accuracy: 0.9800
+Epoch 38/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1071 - accuracy: 0.9955
+Epoch 38: val_loss improved from 0.13159 to 0.12910, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1072 - accuracy: 0.9957 - val_loss: 0.1291 - val_accuracy: 0.9800
+Epoch 39/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1045 - accuracy: 0.9955
+Epoch 39: val_loss improved from 0.12910 to 0.12672, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1047 - accuracy: 0.9957 - val_loss: 0.1267 - val_accuracy: 0.9800
+Epoch 40/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1021 - accuracy: 0.9955
+Epoch 40: val_loss improved from 0.12672 to 0.12444, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1022 - accuracy: 0.9957 - val_loss: 0.1244 - val_accuracy: 0.9800
+Epoch 41/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0998 - accuracy: 0.9955
+Epoch 41: val_loss improved from 0.12444 to 0.12226, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0999 - accuracy: 0.9957 - val_loss: 0.1223 - val_accuracy: 0.9800
+Epoch 42/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0976 - accuracy: 0.9955
+Epoch 42: val_loss improved from 0.12226 to 0.12016, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0977 - accuracy: 0.9957 - val_loss: 0.1202 - val_accuracy: 0.9800
+Epoch 43/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0954 - accuracy: 0.9955
+Epoch 43: val_loss improved from 0.12016 to 0.11816, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0955 - accuracy: 0.9957 - val_loss: 0.1182 - val_accuracy: 0.9800
+Epoch 44/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0934 - accuracy: 0.9955
+Epoch 44: val_loss improved from 0.11816 to 0.11623, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0935 - accuracy: 0.9957 - val_loss: 0.1162 - val_accuracy: 0.9800
+Epoch 45/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0914 - accuracy: 0.9955
+Epoch 45: val_loss improved from 0.11623 to 0.11439, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0915 - accuracy: 0.9957 - val_loss: 0.1144 - val_accuracy: 0.9800
+Epoch 46/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0896 - accuracy: 0.9955
+Epoch 46: val_loss improved from 0.11439 to 0.11260, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0896 - accuracy: 0.9957 - val_loss: 0.1126 - val_accuracy: 0.9800
+Epoch 47/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0877 - accuracy: 0.9955
+Epoch 47: val_loss improved from 0.11260 to 0.11090, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0878 - accuracy: 0.9957 - val_loss: 0.1109 - val_accuracy: 0.9800
+Epoch 48/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0860 - accuracy: 0.9955
+Epoch 48: val_loss improved from 0.11090 to 0.10926, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0861 - accuracy: 0.9957 - val_loss: 0.1093 - val_accuracy: 0.9800
+Epoch 49/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0843 - accuracy: 0.9955
+Epoch 49: val_loss improved from 0.10926 to 0.10767, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0844 - accuracy: 0.9957 - val_loss: 0.1077 - val_accuracy: 0.9800
+Epoch 50/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0827 - accuracy: 0.9955
+Epoch 50: val_loss improved from 0.10767 to 0.10613, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0828 - accuracy: 0.9957 - val_loss: 0.1061 - val_accuracy: 0.9800
+Epoch 51/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0812 - accuracy: 0.9955
+Epoch 51: val_loss improved from 0.10613 to 0.10466, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0812 - accuracy: 0.9957 - val_loss: 0.1047 - val_accuracy: 0.9800
+Epoch 52/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0797 - accuracy: 0.9955
+Epoch 52: val_loss improved from 0.10466 to 0.10325, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0797 - accuracy: 0.9957 - val_loss: 0.1032 - val_accuracy: 0.9800
+Epoch 53/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0782 - accuracy: 0.9955
+Epoch 53: val_loss improved from 0.10325 to 0.10187, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0783 - accuracy: 0.9957 - val_loss: 0.1019 - val_accuracy: 0.9800
+Epoch 54/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0768 - accuracy: 0.9955
+Epoch 54: val_loss improved from 0.10187 to 0.10056, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0769 - accuracy: 0.9957 - val_loss: 0.1006 - val_accuracy: 0.9800
+Epoch 55/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0755 - accuracy: 0.9955
+Epoch 55: val_loss improved from 0.10056 to 0.09928, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0755 - accuracy: 0.9957 - val_loss: 0.0993 - val_accuracy: 0.9800
+Epoch 56/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0742 - accuracy: 0.9955
+Epoch 56: val_loss improved from 0.09928 to 0.09804, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0742 - accuracy: 0.9957 - val_loss: 0.0980 - val_accuracy: 0.9800
+Epoch 57/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0729 - accuracy: 0.9955
+Epoch 57: val_loss improved from 0.09804 to 0.09685, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0729 - accuracy: 0.9957 - val_loss: 0.0968 - val_accuracy: 0.9800
+Epoch 58/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0717 - accuracy: 0.9955
+Epoch 58: val_loss improved from 0.09685 to 0.09569, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0717 - accuracy: 0.9957 - val_loss: 0.0957 - val_accuracy: 0.9867
+Epoch 59/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0705 - accuracy: 0.9955
+Epoch 59: val_loss improved from 0.09569 to 0.09457, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0705 - accuracy: 0.9957 - val_loss: 0.0946 - val_accuracy: 0.9867
+Epoch 60/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0694 - accuracy: 0.9955
+Epoch 60: val_loss improved from 0.09457 to 0.09349, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0694 - accuracy: 0.9957 - val_loss: 0.0935 - val_accuracy: 0.9867
+Epoch 61/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0682 - accuracy: 0.9955
+Epoch 61: val_loss improved from 0.09349 to 0.09243, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0683 - accuracy: 0.9957 - val_loss: 0.0924 - val_accuracy: 0.9867
+Epoch 62/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0672 - accuracy: 0.9955
+Epoch 62: val_loss improved from 0.09243 to 0.09141, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0672 - accuracy: 0.9957 - val_loss: 0.0914 - val_accuracy: 0.9867
+Epoch 63/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0661 - accuracy: 0.9955
+Epoch 63: val_loss improved from 0.09141 to 0.09043, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0662 - accuracy: 0.9957 - val_loss: 0.0904 - val_accuracy: 0.9867
+Epoch 64/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0651 - accuracy: 0.9955
+Epoch 64: val_loss improved from 0.09043 to 0.08947, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0651 - accuracy: 0.9957 - val_loss: 0.0895 - val_accuracy: 0.9867
+Epoch 65/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0641 - accuracy: 0.9970
+Epoch 65: val_loss improved from 0.08947 to 0.08854, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0642 - accuracy: 0.9971 - val_loss: 0.0885 - val_accuracy: 0.9867
+Epoch 66/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0632 - accuracy: 0.9970
+Epoch 66: val_loss improved from 0.08854 to 0.08764, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0632 - accuracy: 0.9971 - val_loss: 0.0876 - val_accuracy: 0.9867
+Epoch 67/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0622 - accuracy: 0.9970
+Epoch 67: val_loss improved from 0.08764 to 0.08676, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0623 - accuracy: 0.9971 - val_loss: 0.0868 - val_accuracy: 0.9867
+Epoch 68/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0613 - accuracy: 0.9970
+Epoch 68: val_loss improved from 0.08676 to 0.08590, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0614 - accuracy: 0.9971 - val_loss: 0.0859 - val_accuracy: 0.9867
+Epoch 69/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0605 - accuracy: 0.9985
+Epoch 69: val_loss improved from 0.08590 to 0.08507, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0605 - accuracy: 0.9986 - val_loss: 0.0851 - val_accuracy: 0.9867
+Epoch 70/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0596 - accuracy: 0.9985
+Epoch 70: val_loss improved from 0.08507 to 0.08426, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0596 - accuracy: 0.9986 - val_loss: 0.0843 - val_accuracy: 0.9867
+Epoch 71/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0588 - accuracy: 0.9985
+Epoch 71: val_loss improved from 0.08426 to 0.08348, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0588 - accuracy: 0.9986 - val_loss: 0.0835 - val_accuracy: 0.9867
+Epoch 72/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0580 - accuracy: 0.9985
+Epoch 72: val_loss improved from 0.08348 to 0.08272, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0580 - accuracy: 0.9986 - val_loss: 0.0827 - val_accuracy: 0.9933
+Epoch 73/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0572 - accuracy: 0.9985
+Epoch 73: val_loss improved from 0.08272 to 0.08197, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0572 - accuracy: 0.9986 - val_loss: 0.0820 - val_accuracy: 0.9933
+Epoch 74/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0564 - accuracy: 0.9985
+Epoch 74: val_loss improved from 0.08197 to 0.08124, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0564 - accuracy: 0.9986 - val_loss: 0.0812 - val_accuracy: 0.9933
+Epoch 75/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0557 - accuracy: 0.9985
+Epoch 75: val_loss improved from 0.08124 to 0.08054, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0557 - accuracy: 0.9986 - val_loss: 0.0805 - val_accuracy: 0.9933
+Epoch 76/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0550 - accuracy: 0.9985
+Epoch 76: val_loss improved from 0.08054 to 0.07985, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0550 - accuracy: 0.9986 - val_loss: 0.0799 - val_accuracy: 0.9933
+Epoch 77/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0543 - accuracy: 1.0000
+Epoch 77: val_loss improved from 0.07985 to 0.07918, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0543 - accuracy: 1.0000 - val_loss: 0.0792 - val_accuracy: 0.9933
+Epoch 78/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0536 - accuracy: 1.0000
+Epoch 78: val_loss improved from 0.07918 to 0.07853, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0536 - accuracy: 1.0000 - val_loss: 0.0785 - val_accuracy: 0.9933
+Epoch 79/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0529 - accuracy: 1.0000
+Epoch 79: val_loss improved from 0.07853 to 0.07789, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0529 - accuracy: 1.0000 - val_loss: 0.0779 - val_accuracy: 0.9933
+Epoch 80/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0522 - accuracy: 1.0000
+Epoch 80: val_loss improved from 0.07789 to 0.07726, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0522 - accuracy: 1.0000 - val_loss: 0.0773 - val_accuracy: 0.9933
+Epoch 81/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0516 - accuracy: 1.0000
+Epoch 81: val_loss improved from 0.07726 to 0.07666, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0516 - accuracy: 1.0000 - val_loss: 0.0767 - val_accuracy: 0.9867
+Epoch 82/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0510 - accuracy: 1.0000
+Epoch 82: val_loss improved from 0.07666 to 0.07606, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0510 - accuracy: 1.0000 - val_loss: 0.0761 - val_accuracy: 0.9867
+Epoch 83/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0504 - accuracy: 1.0000
+Epoch 83: val_loss improved from 0.07606 to 0.07548, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0504 - accuracy: 1.0000 - val_loss: 0.0755 - val_accuracy: 0.9867
+Epoch 84/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0498 - accuracy: 1.0000
+Epoch 84: val_loss improved from 0.07548 to 0.07491, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0498 - accuracy: 1.0000 - val_loss: 0.0749 - val_accuracy: 0.9867
+Epoch 85/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0492 - accuracy: 1.0000
+Epoch 85: val_loss improved from 0.07491 to 0.07436, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0492 - accuracy: 1.0000 - val_loss: 0.0744 - val_accuracy: 0.9867
+Epoch 86/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0486 - accuracy: 1.0000
+Epoch 86: val_loss improved from 0.07436 to 0.07382, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0486 - accuracy: 1.0000 - val_loss: 0.0738 - val_accuracy: 0.9867
+Epoch 87/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0481 - accuracy: 1.0000
+Epoch 87: val_loss improved from 0.07382 to 0.07328, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0480 - accuracy: 1.0000 - val_loss: 0.0733 - val_accuracy: 0.9867
+Epoch 88/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0475 - accuracy: 1.0000
+Epoch 88: val_loss improved from 0.07328 to 0.07277, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0475 - accuracy: 1.0000 - val_loss: 0.0728 - val_accuracy: 0.9867
+Epoch 89/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0470 - accuracy: 1.0000
+Epoch 89: val_loss improved from 0.07277 to 0.07225, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0470 - accuracy: 1.0000 - val_loss: 0.0723 - val_accuracy: 0.9867
+Epoch 90/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0465 - accuracy: 1.0000
+Epoch 90: val_loss improved from 0.07225 to 0.07177, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0464 - accuracy: 1.0000 - val_loss: 0.0718 - val_accuracy: 0.9867
+Epoch 91/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0460 - accuracy: 1.0000
+Epoch 91: val_loss improved from 0.07177 to 0.07128, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0459 - accuracy: 1.0000 - val_loss: 0.0713 - val_accuracy: 0.9867
+Epoch 92/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0455 - accuracy: 1.0000
+Epoch 92: val_loss improved from 0.07128 to 0.07081, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0454 - accuracy: 1.0000 - val_loss: 0.0708 - val_accuracy: 0.9867
+Epoch 93/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0450 - accuracy: 1.0000
+Epoch 93: val_loss improved from 0.07081 to 0.07034, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0449 - accuracy: 1.0000 - val_loss: 0.0703 - val_accuracy: 0.9867
+Epoch 94/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0445 - accuracy: 1.0000
+Epoch 94: val_loss improved from 0.07034 to 0.06988, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0445 - accuracy: 1.0000 - val_loss: 0.0699 - val_accuracy: 0.9867
+Epoch 95/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0440 - accuracy: 1.0000
+Epoch 95: val_loss improved from 0.06988 to 0.06943, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0440 - accuracy: 1.0000 - val_loss: 0.0694 - val_accuracy: 0.9867
+Epoch 96/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0436 - accuracy: 1.0000
+Epoch 96: val_loss improved from 0.06943 to 0.06900, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0435 - accuracy: 1.0000 - val_loss: 0.0690 - val_accuracy: 0.9867
+Epoch 97/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0431 - accuracy: 1.0000
+Epoch 97: val_loss improved from 0.06900 to 0.06857, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0431 - accuracy: 1.0000 - val_loss: 0.0686 - val_accuracy: 0.9867
+Epoch 98/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0427 - accuracy: 1.0000
+Epoch 98: val_loss improved from 0.06857 to 0.06815, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0426 - accuracy: 1.0000 - val_loss: 0.0681 - val_accuracy: 0.9867
+Epoch 99/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0422 - accuracy: 1.0000
+Epoch 99: val_loss improved from 0.06815 to 0.06774, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0422 - accuracy: 1.0000 - val_loss: 0.0677 - val_accuracy: 0.9867
+Epoch 100/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0418 - accuracy: 1.0000
+Epoch 100: val_loss improved from 0.06774 to 0.06733, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0418 - accuracy: 1.0000 - val_loss: 0.0673 - val_accuracy: 0.9867
+Epoch 101/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0414 - accuracy: 1.0000
+Epoch 101: val_loss improved from 0.06733 to 0.06693, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0414 - accuracy: 1.0000 - val_loss: 0.0669 - val_accuracy: 0.9867
+Epoch 102/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0410 - accuracy: 1.0000
+Epoch 102: val_loss improved from 0.06693 to 0.06655, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0410 - accuracy: 1.0000 - val_loss: 0.0666 - val_accuracy: 0.9867
+Epoch 103/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0406 - accuracy: 1.0000
+Epoch 103: val_loss improved from 0.06655 to 0.06617, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0406 - accuracy: 1.0000 - val_loss: 0.0662 - val_accuracy: 0.9867
+Epoch 104/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0402 - accuracy: 1.0000
+Epoch 104: val_loss improved from 0.06617 to 0.06579, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0402 - accuracy: 1.0000 - val_loss: 0.0658 - val_accuracy: 0.9867
+Epoch 105/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0398 - accuracy: 1.0000
+Epoch 105: val_loss improved from 0.06579 to 0.06542, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0398 - accuracy: 1.0000 - val_loss: 0.0654 - val_accuracy: 0.9867
+Epoch 106/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0394 - accuracy: 1.0000
+Epoch 106: val_loss improved from 0.06542 to 0.06507, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0394 - accuracy: 1.0000 - val_loss: 0.0651 - val_accuracy: 0.9867
+Epoch 107/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0391 - accuracy: 1.0000
+Epoch 107: val_loss improved from 0.06507 to 0.06471, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 31ms/step - loss: 0.0390 - accuracy: 1.0000 - val_loss: 0.0647 - val_accuracy: 0.9867
+Epoch 108/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0387 - accuracy: 1.0000
+Epoch 108: val_loss improved from 0.06471 to 0.06436, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0387 - accuracy: 1.0000 - val_loss: 0.0644 - val_accuracy: 0.9867
+Epoch 109/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0384 - accuracy: 1.0000
+Epoch 109: val_loss improved from 0.06436 to 0.06402, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0383 - accuracy: 1.0000 - val_loss: 0.0640 - val_accuracy: 0.9867
+Epoch 110/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0380 - accuracy: 1.0000
+Epoch 110: val_loss improved from 0.06402 to 0.06368, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0380 - accuracy: 1.0000 - val_loss: 0.0637 - val_accuracy: 0.9867
+Epoch 111/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0377 - accuracy: 1.0000
+Epoch 111: val_loss improved from 0.06368 to 0.06335, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0376 - accuracy: 1.0000 - val_loss: 0.0634 - val_accuracy: 0.9867
+Epoch 112/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0373 - accuracy: 1.0000
+Epoch 112: val_loss improved from 0.06335 to 0.06303, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0373 - accuracy: 1.0000 - val_loss: 0.0630 - val_accuracy: 0.9867
+Epoch 113/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0370 - accuracy: 1.0000
+Epoch 113: val_loss improved from 0.06303 to 0.06272, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0370 - accuracy: 1.0000 - val_loss: 0.0627 - val_accuracy: 0.9867
+Epoch 114/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0367 - accuracy: 1.0000
+Epoch 114: val_loss improved from 0.06272 to 0.06240, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0366 - accuracy: 1.0000 - val_loss: 0.0624 - val_accuracy: 0.9867
+Epoch 115/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0364 - accuracy: 1.0000
+Epoch 115: val_loss improved from 0.06240 to 0.06210, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0363 - accuracy: 1.0000 - val_loss: 0.0621 - val_accuracy: 0.9867
+Epoch 116/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0360 - accuracy: 1.0000
+Epoch 116: val_loss improved from 0.06210 to 0.06179, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0360 - accuracy: 1.0000 - val_loss: 0.0618 - val_accuracy: 0.9867
+Epoch 117/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0357 - accuracy: 1.0000
+Epoch 117: val_loss improved from 0.06179 to 0.06149, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0357 - accuracy: 1.0000 - val_loss: 0.0615 - val_accuracy: 0.9867
+Epoch 118/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0354 - accuracy: 1.0000
+Epoch 118: val_loss improved from 0.06149 to 0.06120, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0354 - accuracy: 1.0000 - val_loss: 0.0612 - val_accuracy: 0.9867
+Epoch 119/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0351 - accuracy: 1.0000
+Epoch 119: val_loss improved from 0.06120 to 0.06092, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0351 - accuracy: 1.0000 - val_loss: 0.0609 - val_accuracy: 0.9867
+Epoch 120/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0348 - accuracy: 1.0000
+Epoch 120: val_loss improved from 0.06092 to 0.06063, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0348 - accuracy: 1.0000 - val_loss: 0.0606 - val_accuracy: 0.9867
+Epoch 121/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0345 - accuracy: 1.0000
+Epoch 121: val_loss improved from 0.06063 to 0.06035, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0345 - accuracy: 1.0000 - val_loss: 0.0604 - val_accuracy: 0.9867
+Epoch 122/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0343 - accuracy: 1.0000
+Epoch 122: val_loss improved from 0.06035 to 0.06008, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0342 - accuracy: 1.0000 - val_loss: 0.0601 - val_accuracy: 0.9867
+Epoch 123/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0340 - accuracy: 1.0000
+Epoch 123: val_loss improved from 0.06008 to 0.05981, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0339 - accuracy: 1.0000 - val_loss: 0.0598 - val_accuracy: 0.9867
+Epoch 124/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0337 - accuracy: 1.0000
+Epoch 124: val_loss improved from 0.05981 to 0.05955, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0337 - accuracy: 1.0000 - val_loss: 0.0595 - val_accuracy: 0.9867
+Epoch 125/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0334 - accuracy: 1.0000
+Epoch 125: val_loss improved from 0.05955 to 0.05928, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0334 - accuracy: 1.0000 - val_loss: 0.0593 - val_accuracy: 0.9867
+Epoch 126/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0332 - accuracy: 1.0000
+Epoch 126: val_loss improved from 0.05928 to 0.05903, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0331 - accuracy: 1.0000 - val_loss: 0.0590 - val_accuracy: 0.9867
+Epoch 127/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0329 - accuracy: 1.0000
+Epoch 127: val_loss improved from 0.05903 to 0.05877, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0329 - accuracy: 1.0000 - val_loss: 0.0588 - val_accuracy: 0.9867
+Epoch 128/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0326 - accuracy: 1.0000
+Epoch 128: val_loss improved from 0.05877 to 0.05852, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0326 - accuracy: 1.0000 - val_loss: 0.0585 - val_accuracy: 0.9867
+Epoch 129/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0324 - accuracy: 1.0000
+Epoch 129: val_loss improved from 0.05852 to 0.05828, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0323 - accuracy: 1.0000 - val_loss: 0.0583 - val_accuracy: 0.9867
+Epoch 130/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0321 - accuracy: 1.0000
+Epoch 130: val_loss improved from 0.05828 to 0.05803, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0321 - accuracy: 1.0000 - val_loss: 0.0580 - val_accuracy: 0.9867
+Epoch 131/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0319 - accuracy: 1.0000
+Epoch 131: val_loss improved from 0.05803 to 0.05780, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0319 - accuracy: 1.0000 - val_loss: 0.0578 - val_accuracy: 0.9867
+Epoch 132/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0317 - accuracy: 1.0000
+Epoch 132: val_loss improved from 0.05780 to 0.05756, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0316 - accuracy: 1.0000 - val_loss: 0.0576 - val_accuracy: 0.9867
+Epoch 133/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0314 - accuracy: 1.0000
+Epoch 133: val_loss improved from 0.05756 to 0.05733, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0314 - accuracy: 1.0000 - val_loss: 0.0573 - val_accuracy: 0.9867
+Epoch 134/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0312 - accuracy: 1.0000
+Epoch 134: val_loss improved from 0.05733 to 0.05710, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0311 - accuracy: 1.0000 - val_loss: 0.0571 - val_accuracy: 0.9867
+Epoch 135/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0309 - accuracy: 1.0000
+Epoch 135: val_loss improved from 0.05710 to 0.05688, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0309 - accuracy: 1.0000 - val_loss: 0.0569 - val_accuracy: 0.9867
+Epoch 136/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0307 - accuracy: 1.0000
+Epoch 136: val_loss improved from 0.05688 to 0.05666, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0307 - accuracy: 1.0000 - val_loss: 0.0567 - val_accuracy: 0.9867
+Epoch 137/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0305 - accuracy: 1.0000
+Epoch 137: val_loss improved from 0.05666 to 0.05644, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0304 - accuracy: 1.0000 - val_loss: 0.0564 - val_accuracy: 0.9867
+Epoch 138/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0303 - accuracy: 1.0000
+Epoch 138: val_loss improved from 0.05644 to 0.05622, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0302 - accuracy: 1.0000 - val_loss: 0.0562 - val_accuracy: 0.9867
+Epoch 139/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0301 - accuracy: 1.0000
+Epoch 139: val_loss improved from 0.05622 to 0.05601, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0300 - accuracy: 1.0000 - val_loss: 0.0560 - val_accuracy: 0.9867
+Epoch 140/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0298 - accuracy: 1.0000
+Epoch 140: val_loss improved from 0.05601 to 0.05580, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0298 - accuracy: 1.0000 - val_loss: 0.0558 - val_accuracy: 0.9867
+Epoch 141/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0296 - accuracy: 1.0000
+Epoch 141: val_loss improved from 0.05580 to 0.05559, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0296 - accuracy: 1.0000 - val_loss: 0.0556 - val_accuracy: 0.9867
+Epoch 142/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0294 - accuracy: 1.0000
+Epoch 142: val_loss improved from 0.05559 to 0.05539, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0294 - accuracy: 1.0000 - val_loss: 0.0554 - val_accuracy: 0.9867
+Epoch 143/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0292 - accuracy: 1.0000
+Epoch 143: val_loss improved from 0.05539 to 0.05520, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0292 - accuracy: 1.0000 - val_loss: 0.0552 - val_accuracy: 0.9867
+Epoch 144/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0290 - accuracy: 1.0000
+Epoch 144: val_loss improved from 0.05520 to 0.05499, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0290 - accuracy: 1.0000 - val_loss: 0.0550 - val_accuracy: 0.9867
+Epoch 145/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0288 - accuracy: 1.0000
+Epoch 145: val_loss improved from 0.05499 to 0.05480, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0288 - accuracy: 1.0000 - val_loss: 0.0548 - val_accuracy: 0.9867
+Epoch 146/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0286 - accuracy: 1.0000
+Epoch 146: val_loss improved from 0.05480 to 0.05460, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0286 - accuracy: 1.0000 - val_loss: 0.0546 - val_accuracy: 0.9867
+Epoch 147/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0284 - accuracy: 1.0000
+Epoch 147: val_loss improved from 0.05460 to 0.05442, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0284 - accuracy: 1.0000 - val_loss: 0.0544 - val_accuracy: 0.9867
+Epoch 148/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0282 - accuracy: 1.0000
+Epoch 148: val_loss improved from 0.05442 to 0.05423, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0282 - accuracy: 1.0000 - val_loss: 0.0542 - val_accuracy: 0.9867
+Epoch 149/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0280 - accuracy: 1.0000
+Epoch 149: val_loss improved from 0.05423 to 0.05405, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0280 - accuracy: 1.0000 - val_loss: 0.0541 - val_accuracy: 0.9867
+Epoch 150/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0278 - accuracy: 1.0000
+Epoch 150: val_loss improved from 0.05405 to 0.05386, saving model to logs/20230606-060301normal_lr0.01_momentum0.1_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0278 - accuracy: 1.0000 - val_loss: 0.0539 - val_accuracy: 0.9867
+WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+Pretrained model loaded.
+New model created.
+Training with normal_lr0.01_momentum0.5_nesterov=False...
+Epoch 1/150
+21/22 [===========================>..] - ETA: 0s - loss: 1.1524 - accuracy: 0.5551
+Epoch 1: val_loss improved from inf to 0.67277, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 4s 77ms/step - loss: 1.1418 - accuracy: 0.5586 - val_loss: 0.6728 - val_accuracy: 0.7600
+Epoch 2/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.6228 - accuracy: 0.7917
+Epoch 2: val_loss improved from 0.67277 to 0.49897, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.6233 - accuracy: 0.7929 - val_loss: 0.4990 - val_accuracy: 0.8333
+Epoch 3/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.4798 - accuracy: 0.8497
+Epoch 3: val_loss improved from 0.49897 to 0.41520, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.4809 - accuracy: 0.8514 - val_loss: 0.4152 - val_accuracy: 0.8800
+Epoch 4/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3997 - accuracy: 0.8839
+Epoch 4: val_loss improved from 0.41520 to 0.36192, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.4007 - accuracy: 0.8843 - val_loss: 0.3619 - val_accuracy: 0.8933
+Epoch 5/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3453 - accuracy: 0.9092
+Epoch 5: val_loss improved from 0.36192 to 0.32344, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.3460 - accuracy: 0.9100 - val_loss: 0.3234 - val_accuracy: 0.9267
+Epoch 6/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3048 - accuracy: 0.9182
+Epoch 6: val_loss improved from 0.32344 to 0.29364, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.3053 - accuracy: 0.9186 - val_loss: 0.2936 - val_accuracy: 0.9267
+Epoch 7/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2732 - accuracy: 0.9360
+Epoch 7: val_loss improved from 0.29364 to 0.26949, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2736 - accuracy: 0.9371 - val_loss: 0.2695 - val_accuracy: 0.9400
+Epoch 8/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2476 - accuracy: 0.9479
+Epoch 8: val_loss improved from 0.26949 to 0.24934, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2479 - accuracy: 0.9486 - val_loss: 0.2493 - val_accuracy: 0.9400
+Epoch 9/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2263 - accuracy: 0.9554
+Epoch 9: val_loss improved from 0.24934 to 0.23218, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2266 - accuracy: 0.9557 - val_loss: 0.2322 - val_accuracy: 0.9400
+Epoch 10/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.2085 - accuracy: 0.9658
+Epoch 10: val_loss improved from 0.23218 to 0.21729, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.2087 - accuracy: 0.9657 - val_loss: 0.2173 - val_accuracy: 0.9467
+Epoch 11/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1931 - accuracy: 0.9673
+Epoch 11: val_loss improved from 0.21729 to 0.20421, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1933 - accuracy: 0.9671 - val_loss: 0.2042 - val_accuracy: 0.9467
+Epoch 12/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1798 - accuracy: 0.9717
+Epoch 12: val_loss improved from 0.20421 to 0.19265, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.1800 - accuracy: 0.9714 - val_loss: 0.1927 - val_accuracy: 0.9467
+Epoch 13/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1682 - accuracy: 0.9732
+Epoch 13: val_loss improved from 0.19265 to 0.18233, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1683 - accuracy: 0.9729 - val_loss: 0.1823 - val_accuracy: 0.9467
+Epoch 14/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1579 - accuracy: 0.9792
+Epoch 14: val_loss improved from 0.18233 to 0.17307, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1580 - accuracy: 0.9786 - val_loss: 0.1731 - val_accuracy: 0.9667
+Epoch 15/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1487 - accuracy: 0.9807
+Epoch 15: val_loss improved from 0.17307 to 0.16473, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1489 - accuracy: 0.9800 - val_loss: 0.1647 - val_accuracy: 0.9667
+Epoch 16/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1405 - accuracy: 0.9851
+Epoch 16: val_loss improved from 0.16473 to 0.15721, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1407 - accuracy: 0.9857 - val_loss: 0.1572 - val_accuracy: 0.9733
+Epoch 17/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1331 - accuracy: 0.9896
+Epoch 17: val_loss improved from 0.15721 to 0.15038, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1333 - accuracy: 0.9900 - val_loss: 0.1504 - val_accuracy: 0.9733
+Epoch 18/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1265 - accuracy: 0.9955
+Epoch 18: val_loss improved from 0.15038 to 0.14418, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1266 - accuracy: 0.9957 - val_loss: 0.1442 - val_accuracy: 0.9800
+Epoch 19/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1204 - accuracy: 0.9955
+Epoch 19: val_loss improved from 0.14418 to 0.13853, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1205 - accuracy: 0.9957 - val_loss: 0.1385 - val_accuracy: 0.9800
+Epoch 20/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1148 - accuracy: 0.9955
+Epoch 20: val_loss improved from 0.13853 to 0.13337, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1149 - accuracy: 0.9957 - val_loss: 0.1334 - val_accuracy: 0.9800
+Epoch 21/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1097 - accuracy: 0.9955
+Epoch 21: val_loss improved from 0.13337 to 0.12863, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1098 - accuracy: 0.9957 - val_loss: 0.1286 - val_accuracy: 0.9800
+Epoch 22/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1050 - accuracy: 0.9955
+Epoch 22: val_loss improved from 0.12863 to 0.12427, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1051 - accuracy: 0.9957 - val_loss: 0.1243 - val_accuracy: 0.9800
+Epoch 23/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1007 - accuracy: 0.9955
+Epoch 23: val_loss improved from 0.12427 to 0.12026, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1008 - accuracy: 0.9957 - val_loss: 0.1203 - val_accuracy: 0.9800
+Epoch 24/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0967 - accuracy: 0.9955
+Epoch 24: val_loss improved from 0.12026 to 0.11655, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0968 - accuracy: 0.9957 - val_loss: 0.1165 - val_accuracy: 0.9800
+Epoch 25/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0930 - accuracy: 0.9955
+Epoch 25: val_loss improved from 0.11655 to 0.11312, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0931 - accuracy: 0.9957 - val_loss: 0.1131 - val_accuracy: 0.9800
+Epoch 26/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0895 - accuracy: 0.9955
+Epoch 26: val_loss improved from 0.11312 to 0.10994, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0896 - accuracy: 0.9957 - val_loss: 0.1099 - val_accuracy: 0.9800
+Epoch 27/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0863 - accuracy: 0.9955
+Epoch 27: val_loss improved from 0.10994 to 0.10698, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 31ms/step - loss: 0.0864 - accuracy: 0.9957 - val_loss: 0.1070 - val_accuracy: 0.9800
+Epoch 28/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0833 - accuracy: 0.9955
+Epoch 28: val_loss improved from 0.10698 to 0.10421, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0834 - accuracy: 0.9957 - val_loss: 0.1042 - val_accuracy: 0.9800
+Epoch 29/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0805 - accuracy: 0.9955
+Epoch 29: val_loss improved from 0.10421 to 0.10164, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0806 - accuracy: 0.9957 - val_loss: 0.1016 - val_accuracy: 0.9800
+Epoch 30/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0779 - accuracy: 0.9955
+Epoch 30: val_loss improved from 0.10164 to 0.09922, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0779 - accuracy: 0.9957 - val_loss: 0.0992 - val_accuracy: 0.9800
+Epoch 31/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0754 - accuracy: 0.9955
+Epoch 31: val_loss improved from 0.09922 to 0.09695, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0755 - accuracy: 0.9957 - val_loss: 0.0969 - val_accuracy: 0.9867
+Epoch 32/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0731 - accuracy: 0.9955
+Epoch 32: val_loss improved from 0.09695 to 0.09483, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0731 - accuracy: 0.9957 - val_loss: 0.0948 - val_accuracy: 0.9867
+Epoch 33/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0709 - accuracy: 0.9955
+Epoch 33: val_loss improved from 0.09483 to 0.09283, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0709 - accuracy: 0.9957 - val_loss: 0.0928 - val_accuracy: 0.9867
+Epoch 34/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0688 - accuracy: 0.9955
+Epoch 34: val_loss improved from 0.09283 to 0.09093, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0688 - accuracy: 0.9957 - val_loss: 0.0909 - val_accuracy: 0.9867
+Epoch 35/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0668 - accuracy: 0.9955
+Epoch 35: val_loss improved from 0.09093 to 0.08915, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0669 - accuracy: 0.9957 - val_loss: 0.0892 - val_accuracy: 0.9867
+Epoch 36/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0650 - accuracy: 0.9955
+Epoch 36: val_loss improved from 0.08915 to 0.08746, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0650 - accuracy: 0.9957 - val_loss: 0.0875 - val_accuracy: 0.9867
+Epoch 37/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0632 - accuracy: 0.9955
+Epoch 37: val_loss improved from 0.08746 to 0.08587, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0632 - accuracy: 0.9957 - val_loss: 0.0859 - val_accuracy: 0.9867
+Epoch 38/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0615 - accuracy: 0.9970
+Epoch 38: val_loss improved from 0.08587 to 0.08436, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0616 - accuracy: 0.9971 - val_loss: 0.0844 - val_accuracy: 0.9867
+Epoch 39/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0600 - accuracy: 0.9970
+Epoch 39: val_loss improved from 0.08436 to 0.08292, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0600 - accuracy: 0.9971 - val_loss: 0.0829 - val_accuracy: 0.9933
+Epoch 40/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0584 - accuracy: 0.9970
+Epoch 40: val_loss improved from 0.08292 to 0.08155, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0585 - accuracy: 0.9971 - val_loss: 0.0815 - val_accuracy: 0.9933
+Epoch 41/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0570 - accuracy: 0.9985
+Epoch 41: val_loss improved from 0.08155 to 0.08025, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0570 - accuracy: 0.9986 - val_loss: 0.0803 - val_accuracy: 0.9933
+Epoch 42/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0556 - accuracy: 0.9985
+Epoch 42: val_loss improved from 0.08025 to 0.07901, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0556 - accuracy: 0.9986 - val_loss: 0.0790 - val_accuracy: 0.9867
+Epoch 43/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0543 - accuracy: 0.9985
+Epoch 43: val_loss improved from 0.07901 to 0.07783, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0543 - accuracy: 0.9986 - val_loss: 0.0778 - val_accuracy: 0.9867
+Epoch 44/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0531 - accuracy: 1.0000
+Epoch 44: val_loss improved from 0.07783 to 0.07669, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0531 - accuracy: 1.0000 - val_loss: 0.0767 - val_accuracy: 0.9867
+Epoch 45/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0519 - accuracy: 1.0000
+Epoch 45: val_loss improved from 0.07669 to 0.07562, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0519 - accuracy: 1.0000 - val_loss: 0.0756 - val_accuracy: 0.9867
+Epoch 46/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0507 - accuracy: 1.0000
+Epoch 46: val_loss improved from 0.07562 to 0.07458, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0507 - accuracy: 1.0000 - val_loss: 0.0746 - val_accuracy: 0.9867
+Epoch 47/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0497 - accuracy: 1.0000
+Epoch 47: val_loss improved from 0.07458 to 0.07359, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0496 - accuracy: 1.0000 - val_loss: 0.0736 - val_accuracy: 0.9867
+Epoch 48/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0486 - accuracy: 1.0000
+Epoch 48: val_loss improved from 0.07359 to 0.07264, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0486 - accuracy: 1.0000 - val_loss: 0.0726 - val_accuracy: 0.9867
+Epoch 49/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0476 - accuracy: 1.0000
+Epoch 49: val_loss improved from 0.07264 to 0.07173, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0476 - accuracy: 1.0000 - val_loss: 0.0717 - val_accuracy: 0.9867
+Epoch 50/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0466 - accuracy: 1.0000
+Epoch 50: val_loss improved from 0.07173 to 0.07085, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0466 - accuracy: 1.0000 - val_loss: 0.0708 - val_accuracy: 0.9867
+Epoch 51/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0457 - accuracy: 1.0000
+Epoch 51: val_loss improved from 0.07085 to 0.07001, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0457 - accuracy: 1.0000 - val_loss: 0.0700 - val_accuracy: 0.9867
+Epoch 52/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0448 - accuracy: 1.0000
+Epoch 52: val_loss improved from 0.07001 to 0.06919, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0448 - accuracy: 1.0000 - val_loss: 0.0692 - val_accuracy: 0.9867
+Epoch 53/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0440 - accuracy: 1.0000
+Epoch 53: val_loss improved from 0.06919 to 0.06842, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0439 - accuracy: 1.0000 - val_loss: 0.0684 - val_accuracy: 0.9867
+Epoch 54/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0431 - accuracy: 1.0000
+Epoch 54: val_loss improved from 0.06842 to 0.06766, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0431 - accuracy: 1.0000 - val_loss: 0.0677 - val_accuracy: 0.9867
+Epoch 55/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0423 - accuracy: 1.0000
+Epoch 55: val_loss improved from 0.06766 to 0.06694, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0423 - accuracy: 1.0000 - val_loss: 0.0669 - val_accuracy: 0.9867
+Epoch 56/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0416 - accuracy: 1.0000
+Epoch 56: val_loss improved from 0.06694 to 0.06624, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0415 - accuracy: 1.0000 - val_loss: 0.0662 - val_accuracy: 0.9867
+Epoch 57/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0408 - accuracy: 1.0000
+Epoch 57: val_loss improved from 0.06624 to 0.06556, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0408 - accuracy: 1.0000 - val_loss: 0.0656 - val_accuracy: 0.9867
+Epoch 58/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0401 - accuracy: 1.0000
+Epoch 58: val_loss improved from 0.06556 to 0.06491, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0401 - accuracy: 1.0000 - val_loss: 0.0649 - val_accuracy: 0.9867
+Epoch 59/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0394 - accuracy: 1.0000
+Epoch 59: val_loss improved from 0.06491 to 0.06428, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0394 - accuracy: 1.0000 - val_loss: 0.0643 - val_accuracy: 0.9867
+Epoch 60/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0388 - accuracy: 1.0000
+Epoch 60: val_loss improved from 0.06428 to 0.06366, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0387 - accuracy: 1.0000 - val_loss: 0.0637 - val_accuracy: 0.9867
+Epoch 61/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0381 - accuracy: 1.0000
+Epoch 61: val_loss improved from 0.06366 to 0.06307, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0381 - accuracy: 1.0000 - val_loss: 0.0631 - val_accuracy: 0.9867
+Epoch 62/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0375 - accuracy: 1.0000
+Epoch 62: val_loss improved from 0.06307 to 0.06249, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0374 - accuracy: 1.0000 - val_loss: 0.0625 - val_accuracy: 0.9867
+Epoch 63/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0369 - accuracy: 1.0000
+Epoch 63: val_loss improved from 0.06249 to 0.06194, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0368 - accuracy: 1.0000 - val_loss: 0.0619 - val_accuracy: 0.9867
+Epoch 64/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0363 - accuracy: 1.0000
+Epoch 64: val_loss improved from 0.06194 to 0.06140, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0363 - accuracy: 1.0000 - val_loss: 0.0614 - val_accuracy: 0.9867
+Epoch 65/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0357 - accuracy: 1.0000
+Epoch 65: val_loss improved from 0.06140 to 0.06089, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0357 - accuracy: 1.0000 - val_loss: 0.0609 - val_accuracy: 0.9867
+Epoch 66/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0352 - accuracy: 1.0000
+Epoch 66: val_loss improved from 0.06089 to 0.06038, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0351 - accuracy: 1.0000 - val_loss: 0.0604 - val_accuracy: 0.9867
+Epoch 67/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0346 - accuracy: 1.0000
+Epoch 67: val_loss improved from 0.06038 to 0.05988, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0346 - accuracy: 1.0000 - val_loss: 0.0599 - val_accuracy: 0.9867
+Epoch 68/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0341 - accuracy: 1.0000
+Epoch 68: val_loss improved from 0.05988 to 0.05941, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0341 - accuracy: 1.0000 - val_loss: 0.0594 - val_accuracy: 0.9867
+Epoch 69/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0336 - accuracy: 1.0000
+Epoch 69: val_loss improved from 0.05941 to 0.05895, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0336 - accuracy: 1.0000 - val_loss: 0.0589 - val_accuracy: 0.9867
+Epoch 70/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0331 - accuracy: 1.0000
+Epoch 70: val_loss improved from 0.05895 to 0.05850, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0331 - accuracy: 1.0000 - val_loss: 0.0585 - val_accuracy: 0.9867
+Epoch 71/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0327 - accuracy: 1.0000
+Epoch 71: val_loss improved from 0.05850 to 0.05806, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0326 - accuracy: 1.0000 - val_loss: 0.0581 - val_accuracy: 0.9867
+Epoch 72/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0322 - accuracy: 1.0000
+Epoch 72: val_loss improved from 0.05806 to 0.05763, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0322 - accuracy: 1.0000 - val_loss: 0.0576 - val_accuracy: 0.9867
+Epoch 73/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0318 - accuracy: 1.0000
+Epoch 73: val_loss improved from 0.05763 to 0.05722, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0317 - accuracy: 1.0000 - val_loss: 0.0572 - val_accuracy: 0.9867
+Epoch 74/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0313 - accuracy: 1.0000
+Epoch 74: val_loss improved from 0.05722 to 0.05681, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0313 - accuracy: 1.0000 - val_loss: 0.0568 - val_accuracy: 0.9867
+Epoch 75/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0309 - accuracy: 1.0000
+Epoch 75: val_loss improved from 0.05681 to 0.05641, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0309 - accuracy: 1.0000 - val_loss: 0.0564 - val_accuracy: 0.9867
+Epoch 76/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0305 - accuracy: 1.0000
+Epoch 76: val_loss improved from 0.05641 to 0.05604, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0304 - accuracy: 1.0000 - val_loss: 0.0560 - val_accuracy: 0.9867
+Epoch 77/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0301 - accuracy: 1.0000
+Epoch 77: val_loss improved from 0.05604 to 0.05566, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0300 - accuracy: 1.0000 - val_loss: 0.0557 - val_accuracy: 0.9867
+Epoch 78/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0297 - accuracy: 1.0000
+Epoch 78: val_loss improved from 0.05566 to 0.05529, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0296 - accuracy: 1.0000 - val_loss: 0.0553 - val_accuracy: 0.9867
+Epoch 79/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0293 - accuracy: 1.0000
+Epoch 79: val_loss improved from 0.05529 to 0.05494, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0293 - accuracy: 1.0000 - val_loss: 0.0549 - val_accuracy: 0.9867
+Epoch 80/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0289 - accuracy: 1.0000
+Epoch 80: val_loss improved from 0.05494 to 0.05459, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0289 - accuracy: 1.0000 - val_loss: 0.0546 - val_accuracy: 0.9867
+Epoch 81/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0286 - accuracy: 1.0000
+Epoch 81: val_loss improved from 0.05459 to 0.05425, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0285 - accuracy: 1.0000 - val_loss: 0.0543 - val_accuracy: 0.9867
+Epoch 82/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0282 - accuracy: 1.0000
+Epoch 82: val_loss improved from 0.05425 to 0.05392, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0282 - accuracy: 1.0000 - val_loss: 0.0539 - val_accuracy: 0.9867
+Epoch 83/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0279 - accuracy: 1.0000
+Epoch 83: val_loss improved from 0.05392 to 0.05360, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0278 - accuracy: 1.0000 - val_loss: 0.0536 - val_accuracy: 0.9867
+Epoch 84/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0275 - accuracy: 1.0000
+Epoch 84: val_loss improved from 0.05360 to 0.05329, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0275 - accuracy: 1.0000 - val_loss: 0.0533 - val_accuracy: 0.9867
+Epoch 85/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0272 - accuracy: 1.0000
+Epoch 85: val_loss improved from 0.05329 to 0.05298, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0272 - accuracy: 1.0000 - val_loss: 0.0530 - val_accuracy: 0.9867
+Epoch 86/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0269 - accuracy: 1.0000
+Epoch 86: val_loss improved from 0.05298 to 0.05267, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0268 - accuracy: 1.0000 - val_loss: 0.0527 - val_accuracy: 0.9867
+Epoch 87/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0266 - accuracy: 1.0000
+Epoch 87: val_loss improved from 0.05267 to 0.05238, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0265 - accuracy: 1.0000 - val_loss: 0.0524 - val_accuracy: 0.9867
+Epoch 88/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0263 - accuracy: 1.0000
+Epoch 88: val_loss improved from 0.05238 to 0.05209, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0262 - accuracy: 1.0000 - val_loss: 0.0521 - val_accuracy: 0.9867
+Epoch 89/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0260 - accuracy: 1.0000
+Epoch 89: val_loss improved from 0.05209 to 0.05181, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0259 - accuracy: 1.0000 - val_loss: 0.0518 - val_accuracy: 0.9867
+Epoch 90/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0257 - accuracy: 1.0000
+Epoch 90: val_loss improved from 0.05181 to 0.05153, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0256 - accuracy: 1.0000 - val_loss: 0.0515 - val_accuracy: 0.9867
+Epoch 91/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0254 - accuracy: 1.0000
+Epoch 91: val_loss improved from 0.05153 to 0.05127, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0253 - accuracy: 1.0000 - val_loss: 0.0513 - val_accuracy: 0.9867
+Epoch 92/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0251 - accuracy: 1.0000
+Epoch 92: val_loss improved from 0.05127 to 0.05101, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0251 - accuracy: 1.0000 - val_loss: 0.0510 - val_accuracy: 0.9867
+Epoch 93/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0248 - accuracy: 1.0000
+Epoch 93: val_loss improved from 0.05101 to 0.05074, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0248 - accuracy: 1.0000 - val_loss: 0.0507 - val_accuracy: 0.9867
+Epoch 94/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0246 - accuracy: 1.0000
+Epoch 94: val_loss improved from 0.05074 to 0.05049, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0245 - accuracy: 1.0000 - val_loss: 0.0505 - val_accuracy: 0.9867
+Epoch 95/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0243 - accuracy: 1.0000
+Epoch 95: val_loss improved from 0.05049 to 0.05025, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0243 - accuracy: 1.0000 - val_loss: 0.0502 - val_accuracy: 0.9867
+Epoch 96/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0241 - accuracy: 1.0000
+Epoch 96: val_loss improved from 0.05025 to 0.05000, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0240 - accuracy: 1.0000 - val_loss: 0.0500 - val_accuracy: 0.9867
+Epoch 97/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0238 - accuracy: 1.0000
+Epoch 97: val_loss improved from 0.05000 to 0.04976, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0238 - accuracy: 1.0000 - val_loss: 0.0498 - val_accuracy: 0.9867
+Epoch 98/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0236 - accuracy: 1.0000
+Epoch 98: val_loss improved from 0.04976 to 0.04953, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0235 - accuracy: 1.0000 - val_loss: 0.0495 - val_accuracy: 0.9867
+Epoch 99/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0233 - accuracy: 1.0000
+Epoch 99: val_loss improved from 0.04953 to 0.04930, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0233 - accuracy: 1.0000 - val_loss: 0.0493 - val_accuracy: 0.9867
+Epoch 100/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0231 - accuracy: 1.0000
+Epoch 100: val_loss improved from 0.04930 to 0.04908, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0230 - accuracy: 1.0000 - val_loss: 0.0491 - val_accuracy: 0.9867
+Epoch 101/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0229 - accuracy: 1.0000
+Epoch 101: val_loss improved from 0.04908 to 0.04886, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0228 - accuracy: 1.0000 - val_loss: 0.0489 - val_accuracy: 0.9867
+Epoch 102/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0226 - accuracy: 1.0000
+Epoch 102: val_loss improved from 0.04886 to 0.04864, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0226 - accuracy: 1.0000 - val_loss: 0.0486 - val_accuracy: 0.9867
+Epoch 103/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0224 - accuracy: 1.0000
+Epoch 103: val_loss improved from 0.04864 to 0.04843, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0224 - accuracy: 1.0000 - val_loss: 0.0484 - val_accuracy: 0.9867
+Epoch 104/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0222 - accuracy: 1.0000
+Epoch 104: val_loss improved from 0.04843 to 0.04822, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0221 - accuracy: 1.0000 - val_loss: 0.0482 - val_accuracy: 0.9867
+Epoch 105/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0220 - accuracy: 1.0000
+Epoch 105: val_loss improved from 0.04822 to 0.04802, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0219 - accuracy: 1.0000 - val_loss: 0.0480 - val_accuracy: 0.9867
+Epoch 106/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0218 - accuracy: 1.0000
+Epoch 106: val_loss improved from 0.04802 to 0.04782, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0217 - accuracy: 1.0000 - val_loss: 0.0478 - val_accuracy: 0.9867
+Epoch 107/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0216 - accuracy: 1.0000
+Epoch 107: val_loss improved from 0.04782 to 0.04762, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0215 - accuracy: 1.0000 - val_loss: 0.0476 - val_accuracy: 0.9867
+Epoch 108/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0214 - accuracy: 1.0000
+Epoch 108: val_loss improved from 0.04762 to 0.04743, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0213 - accuracy: 1.0000 - val_loss: 0.0474 - val_accuracy: 0.9867
+Epoch 109/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0212 - accuracy: 1.0000
+Epoch 109: val_loss improved from 0.04743 to 0.04724, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0211 - accuracy: 1.0000 - val_loss: 0.0472 - val_accuracy: 0.9867
+Epoch 110/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0210 - accuracy: 1.0000
+Epoch 110: val_loss improved from 0.04724 to 0.04705, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0209 - accuracy: 1.0000 - val_loss: 0.0471 - val_accuracy: 0.9867
+Epoch 111/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0208 - accuracy: 1.0000
+Epoch 111: val_loss improved from 0.04705 to 0.04687, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0207 - accuracy: 1.0000 - val_loss: 0.0469 - val_accuracy: 0.9867
+Epoch 112/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0206 - accuracy: 1.0000
+Epoch 112: val_loss improved from 0.04687 to 0.04670, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 31ms/step - loss: 0.0205 - accuracy: 1.0000 - val_loss: 0.0467 - val_accuracy: 0.9867
+Epoch 113/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0204 - accuracy: 1.0000
+Epoch 113: val_loss improved from 0.04670 to 0.04652, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0204 - accuracy: 1.0000 - val_loss: 0.0465 - val_accuracy: 0.9867
+Epoch 114/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0202 - accuracy: 1.0000
+Epoch 114: val_loss improved from 0.04652 to 0.04635, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0202 - accuracy: 1.0000 - val_loss: 0.0463 - val_accuracy: 0.9867
+Epoch 115/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0200 - accuracy: 1.0000
+Epoch 115: val_loss improved from 0.04635 to 0.04618, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0200 - accuracy: 1.0000 - val_loss: 0.0462 - val_accuracy: 0.9867
+Epoch 116/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0199 - accuracy: 1.0000
+Epoch 116: val_loss improved from 0.04618 to 0.04601, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0198 - accuracy: 1.0000 - val_loss: 0.0460 - val_accuracy: 0.9867
+Epoch 117/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0197 - accuracy: 1.0000
+Epoch 117: val_loss improved from 0.04601 to 0.04584, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0197 - accuracy: 1.0000 - val_loss: 0.0458 - val_accuracy: 0.9867
+Epoch 118/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0195 - accuracy: 1.0000
+Epoch 118: val_loss improved from 0.04584 to 0.04568, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0195 - accuracy: 1.0000 - val_loss: 0.0457 - val_accuracy: 0.9867
+Epoch 119/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0194 - accuracy: 1.0000
+Epoch 119: val_loss improved from 0.04568 to 0.04552, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0193 - accuracy: 1.0000 - val_loss: 0.0455 - val_accuracy: 0.9867
+Epoch 120/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0192 - accuracy: 1.0000
+Epoch 120: val_loss improved from 0.04552 to 0.04536, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0192 - accuracy: 1.0000 - val_loss: 0.0454 - val_accuracy: 0.9867
+Epoch 121/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0190 - accuracy: 1.0000
+Epoch 121: val_loss improved from 0.04536 to 0.04520, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0190 - accuracy: 1.0000 - val_loss: 0.0452 - val_accuracy: 0.9867
+Epoch 122/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0189 - accuracy: 1.0000
+Epoch 122: val_loss improved from 0.04520 to 0.04505, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0188 - accuracy: 1.0000 - val_loss: 0.0451 - val_accuracy: 0.9867
+Epoch 123/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0187 - accuracy: 1.0000
+Epoch 123: val_loss improved from 0.04505 to 0.04491, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0187 - accuracy: 1.0000 - val_loss: 0.0449 - val_accuracy: 0.9867
+Epoch 124/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0186 - accuracy: 1.0000
+Epoch 124: val_loss improved from 0.04491 to 0.04476, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0185 - accuracy: 1.0000 - val_loss: 0.0448 - val_accuracy: 0.9867
+Epoch 125/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0184 - accuracy: 1.0000
+Epoch 125: val_loss improved from 0.04476 to 0.04461, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0184 - accuracy: 1.0000 - val_loss: 0.0446 - val_accuracy: 0.9867
+Epoch 126/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0183 - accuracy: 1.0000
+Epoch 126: val_loss improved from 0.04461 to 0.04447, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0182 - accuracy: 1.0000 - val_loss: 0.0445 - val_accuracy: 0.9867
+Epoch 127/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0181 - accuracy: 1.0000
+Epoch 127: val_loss improved from 0.04447 to 0.04433, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0181 - accuracy: 1.0000 - val_loss: 0.0443 - val_accuracy: 0.9867
+Epoch 128/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0180 - accuracy: 1.0000
+Epoch 128: val_loss improved from 0.04433 to 0.04420, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0179 - accuracy: 1.0000 - val_loss: 0.0442 - val_accuracy: 0.9867
+Epoch 129/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0179 - accuracy: 1.0000
+Epoch 129: val_loss improved from 0.04420 to 0.04405, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0178 - accuracy: 1.0000 - val_loss: 0.0441 - val_accuracy: 0.9867
+Epoch 130/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0177 - accuracy: 1.0000
+Epoch 130: val_loss improved from 0.04405 to 0.04392, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0177 - accuracy: 1.0000 - val_loss: 0.0439 - val_accuracy: 0.9867
+Epoch 131/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0176 - accuracy: 1.0000
+Epoch 131: val_loss improved from 0.04392 to 0.04379, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0175 - accuracy: 1.0000 - val_loss: 0.0438 - val_accuracy: 0.9867
+Epoch 132/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0174 - accuracy: 1.0000
+Epoch 132: val_loss improved from 0.04379 to 0.04366, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0174 - accuracy: 1.0000 - val_loss: 0.0437 - val_accuracy: 0.9867
+Epoch 133/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0173 - accuracy: 1.0000
+Epoch 133: val_loss improved from 0.04366 to 0.04354, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0173 - accuracy: 1.0000 - val_loss: 0.0435 - val_accuracy: 0.9867
+Epoch 134/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0172 - accuracy: 1.0000
+Epoch 134: val_loss improved from 0.04354 to 0.04340, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0171 - accuracy: 1.0000 - val_loss: 0.0434 - val_accuracy: 0.9867
+Epoch 135/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0171 - accuracy: 1.0000
+Epoch 135: val_loss improved from 0.04340 to 0.04328, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0170 - accuracy: 1.0000 - val_loss: 0.0433 - val_accuracy: 0.9867
+Epoch 136/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0169 - accuracy: 1.0000
+Epoch 136: val_loss improved from 0.04328 to 0.04316, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0169 - accuracy: 1.0000 - val_loss: 0.0432 - val_accuracy: 0.9867
+Epoch 137/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0168 - accuracy: 1.0000
+Epoch 137: val_loss improved from 0.04316 to 0.04303, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0168 - accuracy: 1.0000 - val_loss: 0.0430 - val_accuracy: 0.9867
+Epoch 138/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0167 - accuracy: 1.0000
+Epoch 138: val_loss improved from 0.04303 to 0.04292, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0166 - accuracy: 1.0000 - val_loss: 0.0429 - val_accuracy: 0.9867
+Epoch 139/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0166 - accuracy: 1.0000
+Epoch 139: val_loss improved from 0.04292 to 0.04280, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0165 - accuracy: 1.0000 - val_loss: 0.0428 - val_accuracy: 0.9867
+Epoch 140/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0164 - accuracy: 1.0000
+Epoch 140: val_loss improved from 0.04280 to 0.04268, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0164 - accuracy: 1.0000 - val_loss: 0.0427 - val_accuracy: 0.9867
+Epoch 141/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0163 - accuracy: 1.0000
+Epoch 141: val_loss improved from 0.04268 to 0.04256, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 31ms/step - loss: 0.0163 - accuracy: 1.0000 - val_loss: 0.0426 - val_accuracy: 0.9867
+Epoch 142/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0162 - accuracy: 1.0000
+Epoch 142: val_loss improved from 0.04256 to 0.04246, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0162 - accuracy: 1.0000 - val_loss: 0.0425 - val_accuracy: 0.9867
+Epoch 143/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0161 - accuracy: 1.0000
+Epoch 143: val_loss improved from 0.04246 to 0.04234, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0160 - accuracy: 1.0000 - val_loss: 0.0423 - val_accuracy: 0.9867
+Epoch 144/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0160 - accuracy: 1.0000
+Epoch 144: val_loss improved from 0.04234 to 0.04224, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0159 - accuracy: 1.0000 - val_loss: 0.0422 - val_accuracy: 0.9867
+Epoch 145/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0159 - accuracy: 1.0000
+Epoch 145: val_loss improved from 0.04224 to 0.04212, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0158 - accuracy: 1.0000 - val_loss: 0.0421 - val_accuracy: 0.9867
+Epoch 146/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0158 - accuracy: 1.0000
+Epoch 146: val_loss improved from 0.04212 to 0.04202, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0157 - accuracy: 1.0000 - val_loss: 0.0420 - val_accuracy: 0.9867
+Epoch 147/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0157 - accuracy: 1.0000
+Epoch 147: val_loss improved from 0.04202 to 0.04191, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0156 - accuracy: 1.0000 - val_loss: 0.0419 - val_accuracy: 0.9867
+Epoch 148/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0155 - accuracy: 1.0000
+Epoch 148: val_loss improved from 0.04191 to 0.04181, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0155 - accuracy: 1.0000 - val_loss: 0.0418 - val_accuracy: 0.9867
+Epoch 149/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0154 - accuracy: 1.0000
+Epoch 149: val_loss improved from 0.04181 to 0.04171, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0154 - accuracy: 1.0000 - val_loss: 0.0417 - val_accuracy: 0.9867
+Epoch 150/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0153 - accuracy: 1.0000
+Epoch 150: val_loss improved from 0.04171 to 0.04161, saving model to logs/20230606-060301normal_lr0.01_momentum0.5_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0153 - accuracy: 1.0000 - val_loss: 0.0416 - val_accuracy: 0.9867
+WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+Pretrained model loaded.
+New model created.
+Training with normal_lr0.01_momentum0.9_nesterov=False...
+Epoch 1/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.9646 - accuracy: 0.6220
+Epoch 1: val_loss improved from inf to 0.45303, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 5s 131ms/step - loss: 0.9454 - accuracy: 0.6300 - val_loss: 0.4530 - val_accuracy: 0.8333
+Epoch 2/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.3423 - accuracy: 0.8705
+Epoch 2: val_loss improved from 0.45303 to 0.29896, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.3435 - accuracy: 0.8686 - val_loss: 0.2990 - val_accuracy: 0.8733
+Epoch 3/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1973 - accuracy: 0.9315
+Epoch 3: val_loss improved from 0.29896 to 0.21317, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1947 - accuracy: 0.9343 - val_loss: 0.2132 - val_accuracy: 0.9133
+Epoch 4/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1790 - accuracy: 0.9509
+Epoch 4: val_loss improved from 0.21317 to 0.19051, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1777 - accuracy: 0.9529 - val_loss: 0.1905 - val_accuracy: 0.9333
+Epoch 5/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1643 - accuracy: 0.9539
+Epoch 5: val_loss improved from 0.19051 to 0.15552, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1643 - accuracy: 0.9543 - val_loss: 0.1555 - val_accuracy: 0.9467
+Epoch 6/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1663 - accuracy: 0.9464
+Epoch 6: val_loss improved from 0.15552 to 0.14526, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1668 - accuracy: 0.9457 - val_loss: 0.1453 - val_accuracy: 0.9533
+Epoch 7/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1611 - accuracy: 0.9449
+Epoch 7: val_loss did not improve from 0.14526
+22/22 [==============================] - 0s 19ms/step - loss: 0.1611 - accuracy: 0.9457 - val_loss: 0.1640 - val_accuracy: 0.9533
+Epoch 8/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1674 - accuracy: 0.9345
+Epoch 8: val_loss did not improve from 0.14526
+22/22 [==============================] - 0s 19ms/step - loss: 0.1652 - accuracy: 0.9371 - val_loss: 0.1739 - val_accuracy: 0.9333
+Epoch 9/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1909 - accuracy: 0.9345
+Epoch 9: val_loss improved from 0.14526 to 0.10111, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.1856 - accuracy: 0.9357 - val_loss: 0.1011 - val_accuracy: 0.9667
+Epoch 10/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1806 - accuracy: 0.9420
+Epoch 10: val_loss did not improve from 0.10111
+22/22 [==============================] - 0s 19ms/step - loss: 0.1789 - accuracy: 0.9429 - val_loss: 0.1073 - val_accuracy: 0.9600
+Epoch 11/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.1433 - accuracy: 0.9643
+Epoch 11: val_loss did not improve from 0.10111
+22/22 [==============================] - 0s 19ms/step - loss: 0.1459 - accuracy: 0.9629 - val_loss: 0.2047 - val_accuracy: 0.9600
+Epoch 12/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0992 - accuracy: 0.9747
+Epoch 12: val_loss did not improve from 0.10111
+22/22 [==============================] - 0s 19ms/step - loss: 0.0986 - accuracy: 0.9743 - val_loss: 0.1742 - val_accuracy: 0.9533
+Epoch 13/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0760 - accuracy: 0.9717
+Epoch 13: val_loss improved from 0.10111 to 0.07051, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0735 - accuracy: 0.9729 - val_loss: 0.0705 - val_accuracy: 0.9733
+Epoch 14/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0394 - accuracy: 0.9896
+Epoch 14: val_loss improved from 0.07051 to 0.05914, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0384 - accuracy: 0.9900 - val_loss: 0.0591 - val_accuracy: 0.9867
+Epoch 15/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0194 - accuracy: 0.9970
+Epoch 15: val_loss improved from 0.05914 to 0.05383, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0192 - accuracy: 0.9971 - val_loss: 0.0538 - val_accuracy: 0.9800
+Epoch 16/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0170 - accuracy: 1.0000
+Epoch 16: val_loss improved from 0.05383 to 0.05154, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0168 - accuracy: 1.0000 - val_loss: 0.0515 - val_accuracy: 0.9867
+Epoch 17/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0152 - accuracy: 1.0000
+Epoch 17: val_loss improved from 0.05154 to 0.05027, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0151 - accuracy: 1.0000 - val_loss: 0.0503 - val_accuracy: 0.9867
+Epoch 18/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0143 - accuracy: 1.0000
+Epoch 18: val_loss improved from 0.05027 to 0.04932, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0142 - accuracy: 1.0000 - val_loss: 0.0493 - val_accuracy: 0.9867
+Epoch 19/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0134 - accuracy: 1.0000
+Epoch 19: val_loss improved from 0.04932 to 0.04855, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0134 - accuracy: 1.0000 - val_loss: 0.0485 - val_accuracy: 0.9867
+Epoch 20/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0128 - accuracy: 1.0000
+Epoch 20: val_loss improved from 0.04855 to 0.04787, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0127 - accuracy: 1.0000 - val_loss: 0.0479 - val_accuracy: 0.9867
+Epoch 21/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0122 - accuracy: 1.0000
+Epoch 21: val_loss improved from 0.04787 to 0.04726, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0122 - accuracy: 1.0000 - val_loss: 0.0473 - val_accuracy: 0.9867
+Epoch 22/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0117 - accuracy: 1.0000
+Epoch 22: val_loss improved from 0.04726 to 0.04671, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0117 - accuracy: 1.0000 - val_loss: 0.0467 - val_accuracy: 0.9867
+Epoch 23/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0113 - accuracy: 1.0000
+Epoch 23: val_loss improved from 0.04671 to 0.04621, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0112 - accuracy: 1.0000 - val_loss: 0.0462 - val_accuracy: 0.9867
+Epoch 24/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0109 - accuracy: 1.0000
+Epoch 24: val_loss improved from 0.04621 to 0.04573, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0108 - accuracy: 1.0000 - val_loss: 0.0457 - val_accuracy: 0.9867
+Epoch 25/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0105 - accuracy: 1.0000
+Epoch 25: val_loss improved from 0.04573 to 0.04530, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0105 - accuracy: 1.0000 - val_loss: 0.0453 - val_accuracy: 0.9867
+Epoch 26/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0102 - accuracy: 1.0000
+Epoch 26: val_loss improved from 0.04530 to 0.04489, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0101 - accuracy: 1.0000 - val_loss: 0.0449 - val_accuracy: 0.9867
+Epoch 27/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0099 - accuracy: 1.0000
+Epoch 27: val_loss improved from 0.04489 to 0.04450, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0098 - accuracy: 1.0000 - val_loss: 0.0445 - val_accuracy: 0.9867
+Epoch 28/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0096 - accuracy: 1.0000
+Epoch 28: val_loss improved from 0.04450 to 0.04414, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0095 - accuracy: 1.0000 - val_loss: 0.0441 - val_accuracy: 0.9867
+Epoch 29/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0093 - accuracy: 1.0000
+Epoch 29: val_loss improved from 0.04414 to 0.04380, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0093 - accuracy: 1.0000 - val_loss: 0.0438 - val_accuracy: 0.9867
+Epoch 30/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0091 - accuracy: 1.0000
+Epoch 30: val_loss improved from 0.04380 to 0.04347, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0090 - accuracy: 1.0000 - val_loss: 0.0435 - val_accuracy: 0.9867
+Epoch 31/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0088 - accuracy: 1.0000
+Epoch 31: val_loss improved from 0.04347 to 0.04316, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0088 - accuracy: 1.0000 - val_loss: 0.0432 - val_accuracy: 0.9867
+Epoch 32/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0086 - accuracy: 1.0000
+Epoch 32: val_loss improved from 0.04316 to 0.04288, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0086 - accuracy: 1.0000 - val_loss: 0.0429 - val_accuracy: 0.9867
+Epoch 33/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0084 - accuracy: 1.0000
+Epoch 33: val_loss improved from 0.04288 to 0.04260, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0084 - accuracy: 1.0000 - val_loss: 0.0426 - val_accuracy: 0.9867
+Epoch 34/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0082 - accuracy: 1.0000
+Epoch 34: val_loss improved from 0.04260 to 0.04234, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0082 - accuracy: 1.0000 - val_loss: 0.0423 - val_accuracy: 0.9867
+Epoch 35/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0080 - accuracy: 1.0000
+Epoch 35: val_loss improved from 0.04234 to 0.04208, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0080 - accuracy: 1.0000 - val_loss: 0.0421 - val_accuracy: 0.9867
+Epoch 36/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0079 - accuracy: 1.0000
+Epoch 36: val_loss improved from 0.04208 to 0.04184, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0078 - accuracy: 1.0000 - val_loss: 0.0418 - val_accuracy: 0.9867
+Epoch 37/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0077 - accuracy: 1.0000
+Epoch 37: val_loss improved from 0.04184 to 0.04160, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0077 - accuracy: 1.0000 - val_loss: 0.0416 - val_accuracy: 0.9867
+Epoch 38/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0075 - accuracy: 1.0000
+Epoch 38: val_loss improved from 0.04160 to 0.04139, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0075 - accuracy: 1.0000 - val_loss: 0.0414 - val_accuracy: 0.9867
+Epoch 39/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0074 - accuracy: 1.0000
+Epoch 39: val_loss improved from 0.04139 to 0.04117, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0074 - accuracy: 1.0000 - val_loss: 0.0412 - val_accuracy: 0.9867
+Epoch 40/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0072 - accuracy: 1.0000
+Epoch 40: val_loss improved from 0.04117 to 0.04096, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0072 - accuracy: 1.0000 - val_loss: 0.0410 - val_accuracy: 0.9867
+Epoch 41/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0071 - accuracy: 1.0000
+Epoch 41: val_loss improved from 0.04096 to 0.04078, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0071 - accuracy: 1.0000 - val_loss: 0.0408 - val_accuracy: 0.9867
+Epoch 42/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0070 - accuracy: 1.0000
+Epoch 42: val_loss improved from 0.04078 to 0.04058, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0070 - accuracy: 1.0000 - val_loss: 0.0406 - val_accuracy: 0.9867
+Epoch 43/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0068 - accuracy: 1.0000
+Epoch 43: val_loss improved from 0.04058 to 0.04040, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0068 - accuracy: 1.0000 - val_loss: 0.0404 - val_accuracy: 0.9867
+Epoch 44/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0067 - accuracy: 1.0000
+Epoch 44: val_loss improved from 0.04040 to 0.04022, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0067 - accuracy: 1.0000 - val_loss: 0.0402 - val_accuracy: 0.9867
+Epoch 45/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0066 - accuracy: 1.0000
+Epoch 45: val_loss improved from 0.04022 to 0.04005, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0066 - accuracy: 1.0000 - val_loss: 0.0400 - val_accuracy: 0.9867
+Epoch 46/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0065 - accuracy: 1.0000
+Epoch 46: val_loss improved from 0.04005 to 0.03987, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0065 - accuracy: 1.0000 - val_loss: 0.0399 - val_accuracy: 0.9867
+Epoch 47/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0064 - accuracy: 1.0000
+Epoch 47: val_loss improved from 0.03987 to 0.03973, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0064 - accuracy: 1.0000 - val_loss: 0.0397 - val_accuracy: 0.9867
+Epoch 48/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0063 - accuracy: 1.0000
+Epoch 48: val_loss improved from 0.03973 to 0.03957, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0063 - accuracy: 1.0000 - val_loss: 0.0396 - val_accuracy: 0.9867
+Epoch 49/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0062 - accuracy: 1.0000
+Epoch 49: val_loss improved from 0.03957 to 0.03941, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0062 - accuracy: 1.0000 - val_loss: 0.0394 - val_accuracy: 0.9867
+Epoch 50/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0061 - accuracy: 1.0000
+Epoch 50: val_loss improved from 0.03941 to 0.03927, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0061 - accuracy: 1.0000 - val_loss: 0.0393 - val_accuracy: 0.9867
+Epoch 51/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0060 - accuracy: 1.0000
+Epoch 51: val_loss improved from 0.03927 to 0.03913, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0060 - accuracy: 1.0000 - val_loss: 0.0391 - val_accuracy: 0.9867
+Epoch 52/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0059 - accuracy: 1.0000
+Epoch 52: val_loss improved from 0.03913 to 0.03900, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0059 - accuracy: 1.0000 - val_loss: 0.0390 - val_accuracy: 0.9867
+Epoch 53/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0058 - accuracy: 1.0000
+Epoch 53: val_loss improved from 0.03900 to 0.03887, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0058 - accuracy: 1.0000 - val_loss: 0.0389 - val_accuracy: 0.9867
+Epoch 54/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0057 - accuracy: 1.0000
+Epoch 54: val_loss improved from 0.03887 to 0.03873, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0057 - accuracy: 1.0000 - val_loss: 0.0387 - val_accuracy: 0.9867
+Epoch 55/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0057 - accuracy: 1.0000
+Epoch 55: val_loss improved from 0.03873 to 0.03861, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0056 - accuracy: 1.0000 - val_loss: 0.0386 - val_accuracy: 0.9867
+Epoch 56/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0056 - accuracy: 1.0000
+Epoch 56: val_loss improved from 0.03861 to 0.03849, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0056 - accuracy: 1.0000 - val_loss: 0.0385 - val_accuracy: 0.9867
+Epoch 57/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0055 - accuracy: 1.0000
+Epoch 57: val_loss improved from 0.03849 to 0.03836, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0055 - accuracy: 1.0000 - val_loss: 0.0384 - val_accuracy: 0.9867
+Epoch 58/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0054 - accuracy: 1.0000
+Epoch 58: val_loss improved from 0.03836 to 0.03825, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0054 - accuracy: 1.0000 - val_loss: 0.0383 - val_accuracy: 0.9867
+Epoch 59/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0053 - accuracy: 1.0000
+Epoch 59: val_loss improved from 0.03825 to 0.03814, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0053 - accuracy: 1.0000 - val_loss: 0.0381 - val_accuracy: 0.9867
+Epoch 60/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0053 - accuracy: 1.0000
+Epoch 60: val_loss improved from 0.03814 to 0.03804, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0053 - accuracy: 1.0000 - val_loss: 0.0380 - val_accuracy: 0.9867
+Epoch 61/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0052 - accuracy: 1.0000
+Epoch 61: val_loss improved from 0.03804 to 0.03794, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0052 - accuracy: 1.0000 - val_loss: 0.0379 - val_accuracy: 0.9867
+Epoch 62/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0051 - accuracy: 1.0000
+Epoch 62: val_loss improved from 0.03794 to 0.03783, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0051 - accuracy: 1.0000 - val_loss: 0.0378 - val_accuracy: 0.9867
+Epoch 63/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0051 - accuracy: 1.0000
+Epoch 63: val_loss improved from 0.03783 to 0.03772, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0051 - accuracy: 1.0000 - val_loss: 0.0377 - val_accuracy: 0.9867
+Epoch 64/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0050 - accuracy: 1.0000
+Epoch 64: val_loss improved from 0.03772 to 0.03762, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0050 - accuracy: 1.0000 - val_loss: 0.0376 - val_accuracy: 0.9867
+Epoch 65/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0050 - accuracy: 1.0000
+Epoch 65: val_loss improved from 0.03762 to 0.03754, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0049 - accuracy: 1.0000 - val_loss: 0.0375 - val_accuracy: 0.9867
+Epoch 66/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0049 - accuracy: 1.0000
+Epoch 66: val_loss improved from 0.03754 to 0.03743, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0049 - accuracy: 1.0000 - val_loss: 0.0374 - val_accuracy: 0.9867
+Epoch 67/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0048 - accuracy: 1.0000
+Epoch 67: val_loss improved from 0.03743 to 0.03734, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0048 - accuracy: 1.0000 - val_loss: 0.0373 - val_accuracy: 0.9867
+Epoch 68/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0048 - accuracy: 1.0000
+Epoch 68: val_loss improved from 0.03734 to 0.03725, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0048 - accuracy: 1.0000 - val_loss: 0.0373 - val_accuracy: 0.9867
+Epoch 69/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0047 - accuracy: 1.0000
+Epoch 69: val_loss improved from 0.03725 to 0.03717, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0047 - accuracy: 1.0000 - val_loss: 0.0372 - val_accuracy: 0.9867
+Epoch 70/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0047 - accuracy: 1.0000
+Epoch 70: val_loss improved from 0.03717 to 0.03708, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0047 - accuracy: 1.0000 - val_loss: 0.0371 - val_accuracy: 0.9867
+Epoch 71/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0046 - accuracy: 1.0000
+Epoch 71: val_loss improved from 0.03708 to 0.03700, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0046 - accuracy: 1.0000 - val_loss: 0.0370 - val_accuracy: 0.9867
+Epoch 72/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0046 - accuracy: 1.0000
+Epoch 72: val_loss improved from 0.03700 to 0.03691, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0046 - accuracy: 1.0000 - val_loss: 0.0369 - val_accuracy: 0.9867
+Epoch 73/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0045 - accuracy: 1.0000
+Epoch 73: val_loss improved from 0.03691 to 0.03684, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0045 - accuracy: 1.0000 - val_loss: 0.0368 - val_accuracy: 0.9867
+Epoch 74/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0045 - accuracy: 1.0000
+Epoch 74: val_loss improved from 0.03684 to 0.03677, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0045 - accuracy: 1.0000 - val_loss: 0.0368 - val_accuracy: 0.9867
+Epoch 75/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0044 - accuracy: 1.0000
+Epoch 75: val_loss improved from 0.03677 to 0.03668, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0044 - accuracy: 1.0000 - val_loss: 0.0367 - val_accuracy: 0.9867
+Epoch 76/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0044 - accuracy: 1.0000
+Epoch 76: val_loss improved from 0.03668 to 0.03661, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0044 - accuracy: 1.0000 - val_loss: 0.0366 - val_accuracy: 0.9867
+Epoch 77/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0043 - accuracy: 1.0000
+Epoch 77: val_loss improved from 0.03661 to 0.03654, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0043 - accuracy: 1.0000 - val_loss: 0.0365 - val_accuracy: 0.9867
+Epoch 78/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0043 - accuracy: 1.0000
+Epoch 78: val_loss improved from 0.03654 to 0.03646, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0043 - accuracy: 1.0000 - val_loss: 0.0365 - val_accuracy: 0.9867
+Epoch 79/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0042 - accuracy: 1.0000
+Epoch 79: val_loss improved from 0.03646 to 0.03640, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0042 - accuracy: 1.0000 - val_loss: 0.0364 - val_accuracy: 0.9867
+Epoch 80/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0042 - accuracy: 1.0000
+Epoch 80: val_loss improved from 0.03640 to 0.03633, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0042 - accuracy: 1.0000 - val_loss: 0.0363 - val_accuracy: 0.9867
+Epoch 81/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0042 - accuracy: 1.0000
+Epoch 81: val_loss improved from 0.03633 to 0.03627, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0041 - accuracy: 1.0000 - val_loss: 0.0363 - val_accuracy: 0.9867
+Epoch 82/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0041 - accuracy: 1.0000
+Epoch 82: val_loss improved from 0.03627 to 0.03619, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0041 - accuracy: 1.0000 - val_loss: 0.0362 - val_accuracy: 0.9867
+Epoch 83/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0041 - accuracy: 1.0000
+Epoch 83: val_loss improved from 0.03619 to 0.03612, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0041 - accuracy: 1.0000 - val_loss: 0.0361 - val_accuracy: 0.9867
+Epoch 84/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0040 - accuracy: 1.0000
+Epoch 84: val_loss improved from 0.03612 to 0.03606, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0040 - accuracy: 1.0000 - val_loss: 0.0361 - val_accuracy: 0.9867
+Epoch 85/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0040 - accuracy: 1.0000
+Epoch 85: val_loss improved from 0.03606 to 0.03599, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0040 - accuracy: 1.0000 - val_loss: 0.0360 - val_accuracy: 0.9867
+Epoch 86/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0040 - accuracy: 1.0000
+Epoch 86: val_loss improved from 0.03599 to 0.03594, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0040 - accuracy: 1.0000 - val_loss: 0.0359 - val_accuracy: 0.9867
+Epoch 87/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0039 - accuracy: 1.0000
+Epoch 87: val_loss improved from 0.03594 to 0.03588, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0039 - accuracy: 1.0000 - val_loss: 0.0359 - val_accuracy: 0.9867
+Epoch 88/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0039 - accuracy: 1.0000
+Epoch 88: val_loss improved from 0.03588 to 0.03582, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0039 - accuracy: 1.0000 - val_loss: 0.0358 - val_accuracy: 0.9867
+Epoch 89/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0039 - accuracy: 1.0000
+Epoch 89: val_loss improved from 0.03582 to 0.03576, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0038 - accuracy: 1.0000 - val_loss: 0.0358 - val_accuracy: 0.9867
+Epoch 90/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0038 - accuracy: 1.0000
+Epoch 90: val_loss improved from 0.03576 to 0.03570, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0038 - accuracy: 1.0000 - val_loss: 0.0357 - val_accuracy: 0.9867
+Epoch 91/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0038 - accuracy: 1.0000
+Epoch 91: val_loss improved from 0.03570 to 0.03565, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0038 - accuracy: 1.0000 - val_loss: 0.0356 - val_accuracy: 0.9867
+Epoch 92/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0038 - accuracy: 1.0000
+Epoch 92: val_loss improved from 0.03565 to 0.03560, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0037 - accuracy: 1.0000 - val_loss: 0.0356 - val_accuracy: 0.9867
+Epoch 93/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0037 - accuracy: 1.0000
+Epoch 93: val_loss improved from 0.03560 to 0.03554, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0037 - accuracy: 1.0000 - val_loss: 0.0355 - val_accuracy: 0.9867
+Epoch 94/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0037 - accuracy: 1.0000
+Epoch 94: val_loss improved from 0.03554 to 0.03549, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0037 - accuracy: 1.0000 - val_loss: 0.0355 - val_accuracy: 0.9867
+Epoch 95/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0037 - accuracy: 1.0000
+Epoch 95: val_loss improved from 0.03549 to 0.03544, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0036 - accuracy: 1.0000 - val_loss: 0.0354 - val_accuracy: 0.9867
+Epoch 96/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0036 - accuracy: 1.0000
+Epoch 96: val_loss improved from 0.03544 to 0.03538, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0036 - accuracy: 1.0000 - val_loss: 0.0354 - val_accuracy: 0.9867
+Epoch 97/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0036 - accuracy: 1.0000
+Epoch 97: val_loss improved from 0.03538 to 0.03533, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0036 - accuracy: 1.0000 - val_loss: 0.0353 - val_accuracy: 0.9867
+Epoch 98/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0036 - accuracy: 1.0000
+Epoch 98: val_loss improved from 0.03533 to 0.03529, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0036 - accuracy: 1.0000 - val_loss: 0.0353 - val_accuracy: 0.9867
+Epoch 99/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0035 - accuracy: 1.0000
+Epoch 99: val_loss improved from 0.03529 to 0.03524, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0035 - accuracy: 1.0000 - val_loss: 0.0352 - val_accuracy: 0.9867
+Epoch 100/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0035 - accuracy: 1.0000
+Epoch 100: val_loss improved from 0.03524 to 0.03520, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0035 - accuracy: 1.0000 - val_loss: 0.0352 - val_accuracy: 0.9867
+Epoch 101/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0035 - accuracy: 1.0000
+Epoch 101: val_loss improved from 0.03520 to 0.03514, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0035 - accuracy: 1.0000 - val_loss: 0.0351 - val_accuracy: 0.9867
+Epoch 102/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0034 - accuracy: 1.0000
+Epoch 102: val_loss improved from 0.03514 to 0.03510, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0034 - accuracy: 1.0000 - val_loss: 0.0351 - val_accuracy: 0.9867
+Epoch 103/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0034 - accuracy: 1.0000
+Epoch 103: val_loss improved from 0.03510 to 0.03505, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0034 - accuracy: 1.0000 - val_loss: 0.0351 - val_accuracy: 0.9867
+Epoch 104/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0034 - accuracy: 1.0000
+Epoch 104: val_loss improved from 0.03505 to 0.03499, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0034 - accuracy: 1.0000 - val_loss: 0.0350 - val_accuracy: 0.9867
+Epoch 105/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0034 - accuracy: 1.0000
+Epoch 105: val_loss improved from 0.03499 to 0.03496, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0034 - accuracy: 1.0000 - val_loss: 0.0350 - val_accuracy: 0.9867
+Epoch 106/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0033 - accuracy: 1.0000
+Epoch 106: val_loss improved from 0.03496 to 0.03492, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0033 - accuracy: 1.0000 - val_loss: 0.0349 - val_accuracy: 0.9867
+Epoch 107/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0033 - accuracy: 1.0000
+Epoch 107: val_loss improved from 0.03492 to 0.03488, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0033 - accuracy: 1.0000 - val_loss: 0.0349 - val_accuracy: 0.9867
+Epoch 108/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0033 - accuracy: 1.0000
+Epoch 108: val_loss improved from 0.03488 to 0.03483, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0033 - accuracy: 1.0000 - val_loss: 0.0348 - val_accuracy: 0.9867
+Epoch 109/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0033 - accuracy: 1.0000
+Epoch 109: val_loss improved from 0.03483 to 0.03479, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0033 - accuracy: 1.0000 - val_loss: 0.0348 - val_accuracy: 0.9867
+Epoch 110/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0032 - accuracy: 1.0000
+Epoch 110: val_loss improved from 0.03479 to 0.03474, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0032 - accuracy: 1.0000 - val_loss: 0.0347 - val_accuracy: 0.9867
+Epoch 111/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0032 - accuracy: 1.0000
+Epoch 111: val_loss improved from 0.03474 to 0.03470, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0032 - accuracy: 1.0000 - val_loss: 0.0347 - val_accuracy: 0.9867
+Epoch 112/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0032 - accuracy: 1.0000
+Epoch 112: val_loss improved from 0.03470 to 0.03468, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0032 - accuracy: 1.0000 - val_loss: 0.0347 - val_accuracy: 0.9867
+Epoch 113/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0032 - accuracy: 1.0000
+Epoch 113: val_loss improved from 0.03468 to 0.03463, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0032 - accuracy: 1.0000 - val_loss: 0.0346 - val_accuracy: 0.9867
+Epoch 114/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0031 - accuracy: 1.0000
+Epoch 114: val_loss improved from 0.03463 to 0.03459, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0031 - accuracy: 1.0000 - val_loss: 0.0346 - val_accuracy: 0.9867
+Epoch 115/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0031 - accuracy: 1.0000
+Epoch 115: val_loss improved from 0.03459 to 0.03455, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0031 - accuracy: 1.0000 - val_loss: 0.0345 - val_accuracy: 0.9867
+Epoch 116/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0031 - accuracy: 1.0000
+Epoch 116: val_loss improved from 0.03455 to 0.03452, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0031 - accuracy: 1.0000 - val_loss: 0.0345 - val_accuracy: 0.9867
+Epoch 117/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0031 - accuracy: 1.0000
+Epoch 117: val_loss improved from 0.03452 to 0.03448, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0031 - accuracy: 1.0000 - val_loss: 0.0345 - val_accuracy: 0.9867
+Epoch 118/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0031 - accuracy: 1.0000
+Epoch 118: val_loss improved from 0.03448 to 0.03445, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0030 - accuracy: 1.0000 - val_loss: 0.0345 - val_accuracy: 0.9867
+Epoch 119/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0030 - accuracy: 1.0000
+Epoch 119: val_loss improved from 0.03445 to 0.03440, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0030 - accuracy: 1.0000 - val_loss: 0.0344 - val_accuracy: 0.9867
+Epoch 120/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0030 - accuracy: 1.0000
+Epoch 120: val_loss improved from 0.03440 to 0.03438, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0030 - accuracy: 1.0000 - val_loss: 0.0344 - val_accuracy: 0.9867
+Epoch 121/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0030 - accuracy: 1.0000
+Epoch 121: val_loss improved from 0.03438 to 0.03433, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0030 - accuracy: 1.0000 - val_loss: 0.0343 - val_accuracy: 0.9867
+Epoch 122/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0030 - accuracy: 1.0000
+Epoch 122: val_loss improved from 0.03433 to 0.03431, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0030 - accuracy: 1.0000 - val_loss: 0.0343 - val_accuracy: 0.9867
+Epoch 123/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0030 - accuracy: 1.0000
+Epoch 123: val_loss improved from 0.03431 to 0.03427, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0029 - accuracy: 1.0000 - val_loss: 0.0343 - val_accuracy: 0.9867
+Epoch 124/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0029 - accuracy: 1.0000
+Epoch 124: val_loss improved from 0.03427 to 0.03424, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0029 - accuracy: 1.0000 - val_loss: 0.0342 - val_accuracy: 0.9867
+Epoch 125/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0029 - accuracy: 1.0000
+Epoch 125: val_loss improved from 0.03424 to 0.03420, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0029 - accuracy: 1.0000 - val_loss: 0.0342 - val_accuracy: 0.9867
+Epoch 126/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0029 - accuracy: 1.0000
+Epoch 126: val_loss improved from 0.03420 to 0.03417, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0029 - accuracy: 1.0000 - val_loss: 0.0342 - val_accuracy: 0.9867
+Epoch 127/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0029 - accuracy: 1.0000
+Epoch 127: val_loss improved from 0.03417 to 0.03414, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0029 - accuracy: 1.0000 - val_loss: 0.0341 - val_accuracy: 0.9867
+Epoch 128/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0029 - accuracy: 1.0000
+Epoch 128: val_loss improved from 0.03414 to 0.03411, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0028 - accuracy: 1.0000 - val_loss: 0.0341 - val_accuracy: 0.9867
+Epoch 129/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0028 - accuracy: 1.0000
+Epoch 129: val_loss improved from 0.03411 to 0.03407, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0028 - accuracy: 1.0000 - val_loss: 0.0341 - val_accuracy: 0.9867
+Epoch 130/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0028 - accuracy: 1.0000
+Epoch 130: val_loss improved from 0.03407 to 0.03404, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0028 - accuracy: 1.0000 - val_loss: 0.0340 - val_accuracy: 0.9867
+Epoch 131/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0028 - accuracy: 1.0000
+Epoch 131: val_loss improved from 0.03404 to 0.03401, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0028 - accuracy: 1.0000 - val_loss: 0.0340 - val_accuracy: 0.9867
+Epoch 132/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0028 - accuracy: 1.0000
+Epoch 132: val_loss improved from 0.03401 to 0.03398, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0028 - accuracy: 1.0000 - val_loss: 0.0340 - val_accuracy: 0.9867
+Epoch 133/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0028 - accuracy: 1.0000
+Epoch 133: val_loss improved from 0.03398 to 0.03395, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0028 - accuracy: 1.0000 - val_loss: 0.0340 - val_accuracy: 0.9867
+Epoch 134/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0027 - accuracy: 1.0000
+Epoch 134: val_loss improved from 0.03395 to 0.03393, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.0339 - val_accuracy: 0.9867
+Epoch 135/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0027 - accuracy: 1.0000
+Epoch 135: val_loss improved from 0.03393 to 0.03390, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.0339 - val_accuracy: 0.9867
+Epoch 136/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0027 - accuracy: 1.0000
+Epoch 136: val_loss improved from 0.03390 to 0.03387, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.0339 - val_accuracy: 0.9867
+Epoch 137/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0027 - accuracy: 1.0000
+Epoch 137: val_loss improved from 0.03387 to 0.03384, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.0338 - val_accuracy: 0.9867
+Epoch 138/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0027 - accuracy: 1.0000
+Epoch 138: val_loss improved from 0.03384 to 0.03381, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.0338 - val_accuracy: 0.9867
+Epoch 139/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0027 - accuracy: 1.0000
+Epoch 139: val_loss improved from 0.03381 to 0.03379, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.0338 - val_accuracy: 0.9867
+Epoch 140/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 140: val_loss improved from 0.03379 to 0.03376, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0026 - accuracy: 1.0000 - val_loss: 0.0338 - val_accuracy: 0.9867
+Epoch 141/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 141: val_loss improved from 0.03376 to 0.03373, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0026 - accuracy: 1.0000 - val_loss: 0.0337 - val_accuracy: 0.9867
+Epoch 142/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 142: val_loss improved from 0.03373 to 0.03370, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0026 - accuracy: 1.0000 - val_loss: 0.0337 - val_accuracy: 0.9867
+Epoch 143/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 143: val_loss improved from 0.03370 to 0.03367, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0026 - accuracy: 1.0000 - val_loss: 0.0337 - val_accuracy: 0.9867
+Epoch 144/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 144: val_loss improved from 0.03367 to 0.03365, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0026 - accuracy: 1.0000 - val_loss: 0.0336 - val_accuracy: 0.9867
+Epoch 145/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 145: val_loss improved from 0.03365 to 0.03362, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0026 - accuracy: 1.0000 - val_loss: 0.0336 - val_accuracy: 0.9867
+Epoch 146/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0026 - accuracy: 1.0000
+Epoch 146: val_loss improved from 0.03362 to 0.03360, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0025 - accuracy: 1.0000 - val_loss: 0.0336 - val_accuracy: 0.9867
+Epoch 147/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0025 - accuracy: 1.0000
+Epoch 147: val_loss improved from 0.03360 to 0.03358, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0025 - accuracy: 1.0000 - val_loss: 0.0336 - val_accuracy: 0.9867
+Epoch 148/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0025 - accuracy: 1.0000
+Epoch 148: val_loss improved from 0.03358 to 0.03355, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0025 - accuracy: 1.0000 - val_loss: 0.0336 - val_accuracy: 0.9867
+Epoch 149/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0025 - accuracy: 1.0000
+Epoch 149: val_loss improved from 0.03355 to 0.03351, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 33ms/step - loss: 0.0025 - accuracy: 1.0000 - val_loss: 0.0335 - val_accuracy: 0.9867
+Epoch 150/150
+21/22 [===========================>..] - ETA: 0s - loss: 0.0025 - accuracy: 1.0000
+Epoch 150: val_loss improved from 0.03351 to 0.03349, saving model to logs/20230606-060301normal_lr0.01_momentum0.9_nesterov=False/best.h5
+22/22 [==============================] - 1s 32ms/step - loss: 0.0025 - accuracy: 1.0000 - val_loss: 0.0335 - val_accuracy: 0.9867
+
+([('0.1', <keras.engine.functional.Functional at 0x7f7add2977c0>),
+  ('0.5', <keras.engine.functional.Functional at 0x7f7adcafc970>),
+  ('0.9', <keras.engine.functional.Functional at 0x7f7ad5924370>)],
+ [('0.1', <keras.callbacks.History at 0x7f7add2c8520>),
+  ('0.5', <keras.callbacks.History at 0x7f7adc984760>),
+  ('0.9', <keras.callbacks.History at 0x7f7ad5947bb0>)])
