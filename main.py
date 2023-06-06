@@ -825,7 +825,7 @@ def task_8():
     global task_8_models, task_8_histories
     global best_model_str_task_7, best_model_task_7
     train_configuration = {
-        'max_epoch': 150,=
+        'max_epoch': 150,
         'tensorboard': False,
         'save_model': True,
         'checkpoint_best': True,
