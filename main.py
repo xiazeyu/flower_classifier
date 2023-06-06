@@ -5,6 +5,8 @@ import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
+import seaborn as sns
+import math
 
 # Constants
 
@@ -75,7 +77,8 @@ def evaluate_model(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[fl
 
     return model.evaluate(dataset)
 
-def predict(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[np.ndarray, np.ndarray]':
+
+def predict(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[np.ndarray, np.ndarray, np.ndarray]':
     """Predict the model on a dataset.
 
     Args:
@@ -83,12 +86,15 @@ def predict(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[np.ndarra
         dataset (tf.data.Dataset): Dataset to predict the model on.
 
     Returns:
-        tuple[np.ndarray, np.ndarray]: Prediction & ground truth.
+        tuple[np.ndarray, np.ndarray, np.ndarray]: Prediction, ground truth, and the dataset.
+        Prediction shape: (dataset_length)
+        Ground truth shape: (dataset_length)
+        Dataset shape: (dataset_length, 224, 224, 3)
     """
 
-    prob_prediction = model.predict(dataset) # shape=(dataset_length, 5)
-    
-    prediction = np.argmax(prob_prediction, axis=1) # shape=(dataset_length)
+    prob_prediction = model.predict(dataset)  # shape=(dataset_length, 5)
+
+    prediction = np.argmax(prob_prediction, axis=1)  # shape=(dataset_length)
 
     Xs = []
     ys = []
@@ -102,8 +108,107 @@ def predict(model: tf.keras.Model, dataset: tf.data.Dataset) -> 'tuple[np.ndarra
 
     Xs = np.concatenate(Xs)
     ground_truth = np.concatenate(ys)
-    
+
     return (prediction, ground_truth, Xs)
+
+
+def plot_confusion_matrix(actual: tf.Tensor, predicted: tf.Tensor, labels: 'list[str]', ds_type: str) -> None:
+    """Plot the confusion matrix.
+
+    Args:
+        actual (tf.Tensor): Actual labels.
+        predicted (tf.Tensor): Predicted labels.
+        labels (list[str]): Labels.
+        ds_type (str): Dataset type.
+
+    Returns:
+        None
+    """
+    cm = tf.math.confusion_matrix(actual, predicted)
+    ax = sns.heatmap(cm, annot=True, fmt='g')
+    sns.set(rc={'figure.figsize': (12, 12)})
+    sns.set(font_scale=1.4)
+    ax.set_title('Confusion matrix of ' + ds_type)
+    ax.set_xlabel('Predicted category')
+    ax.set_ylabel('Actual category')
+    plt.xticks(rotation=90)
+    plt.yticks(rotation=0)
+    ax.xaxis.set_ticklabels(labels)
+    ax.yaxis.set_ticklabels(labels)
+
+    plt.tight_layout()
+    plt.show()
+
+
+def predict_and_plot_confusion_matrix(model: tf.keras.Model, dataset: tf.data.Dataset, set_name: str) -> None:
+    """Predict the model on a dataset and plot the confusion matrix.
+
+    Args:
+        model (Model): Model to predict.
+        dataset (tf.data.Dataset): Dataset to predict the model on.
+        set_name (str): Name of the dataset.
+
+    Returns:
+        None
+    """
+
+    pred, truth, X = predict(model, dataset)
+    plot_confusion_matrix(truth, pred, class_names, f'{set_name} set')
+
+
+def predict_and_draw_wrong_prediction(model: tf.keras.Model, dataset: tf.data.Dataset) -> None:
+    """Predict and draw the wrong predictions.
+
+    Args:
+        model (Model): Model to predict.
+        dataset (tf.data.Dataset): Dataset to predict the model on.
+
+    Returns:
+        None
+    """
+
+    pred, truth, X = predict(model, dataset)
+
+    indices = np.where(pred != truth)[0]
+
+    ncols = 4
+    nrows = math.ceil(len(indices) / ncols)
+
+    fig, axs = plt.subplots(nrows, ncols, figsize=(20, 10))
+
+    axs = axs.flatten()
+
+    for i, idx in enumerate(indices):
+        img = X[idx]
+        axs[i].imshow(img)
+        axs[i].set_title(
+            f'gt={class_names[truth[idx]]}, pd={class_names[pred[idx]]}')
+        axs[i].axis('off')
+
+    # Remove the unused subplots
+    if len(indices) < len(axs):
+        for j in range(len(indices), len(axs)):
+            fig.delaxes(axs[j])
+
+    plt.tight_layout()
+    plt.show()
+
+
+def load_and_evaluate(model_path: 'str', train_ds: tf.data.Dataset, val_ds: tf.data.Dataset, test_ds: tf.data.Dataset) -> None:
+    """Load and evaluate the model.
+
+    Args:
+        model_path (str): Path to the model.
+        train_ds (tf.data.Dataset): Training dataset.
+        val_ds (tf.data.Dataset): Validation dataset.
+        test_ds (tf.data.Dataset): Test dataset.
+    """
+
+    new_model = tf.keras.models.load_model(model_path)
+
+    print('train_set', evaluate_model(new_model, train_ds))
+    print('val_set', evaluate_model(new_model, val_ds))
+    print('test_set', evaluate_model(new_model, test_ds))
 
 # Tasks
 
@@ -370,7 +475,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
     train_conf = f'{model_type}_lr{learning_rate}_momentum{momentum}_nesterov={nesterov}'
     if extra_log_path:
         train_conf += f'_{extra_log_path}'
-    
+
     print(f'Training with {train_conf}...')
 
     optimizer = tf.keras.optimizers.experimental.SGD(
@@ -394,7 +499,7 @@ def task_5_compile_and_train(model: tf.keras.Model,
     if tensorboard:
         callbacks.append(tf.keras.callbacks.TensorBoard(
             log_dir=log_dir + train_conf, histogram_freq=1))
-    
+
     if checkpoint_best:
         callbacks.append(tf.keras.callbacks.ModelCheckpoint(
             filepath=log_dir + train_conf + '/best.h5', monitor='val_loss', save_best_only=True, verbose=1))
@@ -502,7 +607,7 @@ def task_8_expriment_with_different_momentums(model_gen_function: 'Callable[[], 
                                               val_ds: tf.data.Dataset,
                                               momentums: 'list[float]' = [
                                                   0.1, 0.5, 0.9],
-                                               **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
+                                              **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
     """Experiment with 3 different values for the momentum. Plot the results, draw conclusions.
 
     Args:
@@ -510,7 +615,7 @@ def task_8_expriment_with_different_momentums(model_gen_function: 'Callable[[], 
         train_ds (tf.data.Dataset): The training dataset.
         val_ds (tf.data.Dataset): The validation dataset.
         momentums (list[float], optional): A list of momentums to experiment with. Defaults to [0.1, 0.5, 0.9].
-        
+
     Returns:
         tuple[list[tuple[str, Model]], list[tuple[str, tf.keras.callbacks.History]]]: A tuple of (models, histories).
     """
@@ -591,6 +696,7 @@ def task_9_generate_acceleated_datasets(batch_size: int = 32, **extra_args) -> '
 
     return train_ds, val_ds, test_ds
 
+
 def generate_accelerated_model(classes: int = 5, print_model: bool = False) -> 'tf.keras.Model':
     """Generate a model based on the MobileNet v2 model with the last layer removed.
 
@@ -617,86 +723,168 @@ def generate_accelerated_model(classes: int = 5, print_model: bool = False) -> '
 
     return flower_model
 
-def task_10_train_on_accelerated_datasets(classes: int = 5, **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
+
+def task_10_train_on_accelerated_datasets(model_gen_function: 'Callable[[], tf.keras.Model]', **extra_args) -> 'tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]':
     """Train a model on the accelerated datasets.
 
     Args:
-        classes (int, optional): The number of classes in the dataset. Defaults to 5.
+        model_gen_function (Callable[[], tf.keras.Model]): The function to generate the model.
 
     Returns:
         tuple[list[tuple[str, tf.keras.Model]], list[tuple[str, tf.keras.callbacks.History]]]: A tuple of (models, histories).
     """
 
     models, histories = task_8_expriment_with_different_momentums(
-        generate_accelerated_model, **extra_args
+        model_gen_function, **extra_args
     )
 
     return models, histories
 
-if __name__ == "__main__":
-    pass
 
+def task_1():
+    """Task 1: Dataset Sanity Check"""
+    task_1_dataset_sanity_check()
+
+
+def task_2():
+    """Task 2: Download Pretrained Model"""
+    task_2_download_pretrained_model()
+
+
+def task_3():
+    """Task 3: Replace Last Layer"""
+    global model_gen_function
+    model_gen_function = task_3_replace_last_layer
+
+
+def task_4():
+    """Task 4: Prepare Dataset"""
+    global train_ds, val_ds, test_ds
+    train_ds, val_ds, test_ds = task_4_prepare_dataset()
+    task_4_prepare_dataset()
+
+
+def task_5():
+    """Task 5: Compile and Train"""
+    global model_gen_function
+    global train_ds, val_ds, test_ds
+    global task_5_model, task_5_history
     train_configuration = {
         'max_epoch': 500,
-        'min_delta': 0.001,
-        'patience': 5,
         'tensorboard': False,
         'save_model': True,
-        'early_stopping': True,
         'checkpoint_best': True,
         'seed': 42,
     }
+    task_5_model, task_5_history = task_5_compile_and_train(
+        model_gen_function(), train_ds=train_ds, val_ds=val_ds, **train_configuration)
+    
+    print(f'model performance on train set: {evaluate_model(task_5_model, train_ds)}')
+    print(f'model performance on val set: {evaluate_model(task_5_model, val_ds)}')
+    print(f'model performance on test set: {evaluate_model(task_5_model, test_ds)}')
 
-    # Put this to True to use accelerated model for all tasks
-    accelerated = True
+    predict_and_plot_confusion_matrix(task_5_model, val_ds, 'validation')
+    predict_and_plot_confusion_matrix(task_5_model, test_ds, 'test')
 
-    # autopep8: off
-    print("*** Environment Check ***"); env_check()
-    print("*** Task 1 ***"); task_1_dataset_sanity_check()
-    print("*** Task 2 ***"); task_2_download_pretrained_model()
-    print("*** Task 3 ***"); model_gen_function = task_3_replace_last_layer
-    if accelerated: print("Accelerate Experiments"); model_gen_function = generate_accelerated_model
-    print("*** Task 4 ***"); train_ds, val_ds, test_ds = task_4_prepare_dataset()
-    if accelerated: print("Accelerate Experiments"); train_ds, val_ds, test_ds = task_9_generate_acceleated_datasets()
+    predict_and_draw_wrong_prediction(task_5_model, val_ds)
+    predict_and_draw_wrong_prediction(task_5_model, test_ds)
+
+
+def task_6():
+    """Task 6: Plot Metrics"""
+    global task_5_history
+    task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
+
+
+def task_7():
+    """Task 7: Experiment with Different Learning Rates"""
+    global model_gen_function
+    global train_ds, val_ds, test_ds
+    global task_7_models, task_7_histories
+    global task_5_history
     train_configuration = {
         'max_epoch': 500,
-        'min_delta': 0.001,
-        'patience': 5,
         'tensorboard': False,
         'save_model': True,
-        'early_stopping': True,
         'checkpoint_best': True,
         'seed': 42,
     }
-    print("*** Task 5 ***"); task_5_model, task_5_history = task_5_compile_and_train(model=model_gen_function(), train_ds=train_ds, val_ds=val_ds, **train_configuration)
-    print("*** Task 6 ***"); task_6_plot_metrics([('Task 5', task_5_history)], 'Task 6')
+    task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(
+        model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds, task_5_history=task_5_history, **train_configuration)
+
+    for model_name, model in task_7_models:
+        print(f'model (lr={model_name}) performance on train set: {evaluate_model(model, train_ds)}')
+        print(f'model (lr={model_name}) performance on val set: {evaluate_model(model, val_ds)}')
+        print(f'model (lr={model_name}) performance on test set: {evaluate_model(model, test_ds)}')
+
+def task_8():
+    """Task 8: Experiment with Different Momentums"""
+    global task_7_models
+    global train_ds, val_ds, test_ds
+    global model_gen_function
+    global task_8_models, task_8_histories
+    global best_model_str_task_7, best_model_task_7
     train_configuration = {
-        'max_epoch': 500,
-        'min_delta': 0.001,
-        'patience': 5,
+        'max_epoch': 150,=
         'tensorboard': False,
         'save_model': True,
-        'early_stopping': False,
         'checkpoint_best': True,
         'seed': 42,
     }
-    print("*** Task 7 ***"); task_7_models, task_7_histories = task_7_expriment_with_different_learning_rates(model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds,  **train_configuration)
+    best_model_str_task_7, best_model_task_7 = select_best_model(
+        models=task_7_models, dataset=test_ds)
+    print(f'BEST MODEL: learning_rate = {best_model_str_task_7}')
+    task_8_models, task_8_histories = task_8_expriment_with_different_momentums(
+        model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds,  **train_configuration)
+    
+    for model_name, model in task_8_models:
+        print(f'model (momentum={model_name}) performance on train set: {evaluate_model(model, train_ds)}')
+        print(f'model (momentum={model_name}) performance on val set: {evaluate_model(model, val_ds)}')
+        print(f'model (momentum={model_name}) performance on test set: {evaluate_model(model, test_ds)}')
+
+
+def task_9():
+    """Task 9: Generate Accelerated Datasets"""
+    global train_ds, val_ds, test_ds
+    global model_gen_function
+    train_ds, val_ds, test_ds = task_9_generate_acceleated_datasets()
+    model_gen_function = generate_accelerated_model
+
+
+def task_10():
+    """Task 10: Train on Accelerated Datasets"""
+    global best_model_str_task_7
+    global model_gen_function
+    global train_ds, val_ds, test_ds
+    global task_10_models, task_10_histories
+    model_gen_function = generate_accelerated_model
     train_configuration = {
         'max_epoch': 150,
-        'min_delta': 0.001,
-        'patience': 5,
         'tensorboard': False,
         'save_model': True,
-        'early_stopping': False,
         'checkpoint_best': True,
         'seed': 42,
     }
-    
-    print("*** Task 8 ***"); best_model_str_task_7, best_model_task_7 = select_best_model(models=task_7_models, dataset=test_ds); print(f'BEST MODEL: learning_rate = {best_model_str_task_7}'); task_8_expriment_with_different_momentums(model_gen_function=model_gen_function, train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7),  **train_configuration)
-    print("*** Task 9 ***"); accelerated_train_ds, accelerated_val_ds, accelerated_test_ds = task_9_generate_acceleated_datasets()
-    print("*** Task 10 ***"); task_10_models, task_10_histories = task_10_train_on_accelerated_datasets(train_ds=accelerated_train_ds, val_ds=accelerated_val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
-    # autopep8: on
+    task_10_models, task_10_histories = task_10_train_on_accelerated_datasets(model_gen_function=model_gen_function, 
+        train_ds=train_ds, val_ds=val_ds, learning_rate=float(best_model_str_task_7), **train_configuration)
 
-# TODO
-# analysis
-# confusion matrix
+    for model_name, model in task_10_models:
+        print(f'model (accelerated={model_name}) performance on train set: {evaluate_model(model, train_ds)}')
+        print(f'model (accelerated={model_name}) performance on val set: {evaluate_model(model, val_ds)}')
+        print(f'model (accelerated={model_name}) performance on test set: {evaluate_model(model, test_ds)}')
+
+if __name__ == "__main__":
+
+    print(my_team())
+    env_check()
+
+    task_1()
+    task_2()
+    task_3()
+    task_4()
+    task_5()
+    task_6()
+    task_7()
+    task_8()
+    task_9()
+    task_10()
